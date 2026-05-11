@@ -1,0 +1,11 @@
+# build results
+dist
+
+# dependencies
+node_modules
+
+# package managers
+pnpm-lock.yaml
+
+# HTML ignore
+**/*.html

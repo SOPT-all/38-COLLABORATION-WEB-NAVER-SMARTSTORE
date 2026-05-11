@@ -1,5 +1,7 @@
+import TokenExample from "../components/token-example";
+
 function App() {
-  return <>sds</>;
+  return <TokenExample />;
 }
 
 export default App;

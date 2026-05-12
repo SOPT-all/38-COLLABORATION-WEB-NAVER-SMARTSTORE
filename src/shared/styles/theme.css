@@ -27,9 +27,8 @@
   --color-gray-hovered: #5f6678;
   --color-gray-pressed: #545a6a;
 
-  --color-text-black: #121212;
-  --color-text-gray: #848483;
-  --color-text-white: #ffffff;
+  --color-black: #121212;
+  --color-gray: #848483;
 }
 
 :root {

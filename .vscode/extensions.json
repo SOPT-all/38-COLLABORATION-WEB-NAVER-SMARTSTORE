@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint", // ESLint 실행 및 오류 표시
-    "esbenp.prettier-vscode" // Prettier 코드 정렬
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode" 
   ]
 }

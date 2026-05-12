@@ -6,8 +6,6 @@ import { queryClient } from "../shared/api/query-client";
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <>sds</>
-
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );

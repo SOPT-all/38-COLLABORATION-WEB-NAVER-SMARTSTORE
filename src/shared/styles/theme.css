@@ -1,0 +1,76 @@
+@theme {
+  --color-green: #03c75a;
+  --color-green-hovered: #03b351;
+  --color-green-pressed: #029f48;
+
+  --color-red: #ff3627;
+
+  --color-blue-600: #3682d5;
+  --color-blue-500: #28a8f6;
+  --color-blue-100: #e4f3ff;
+
+  --color-icon-yellow: #faaa00;
+  --color-icon-mint: #0acaaa;
+  --color-icon-blue-500: #3277ff;
+  --color-icon-blue-600: #4242ff;
+
+  --color-gray-800: #2d3539;
+  --color-gray-700: #39404c;
+  --color-gray-600: #414b5a;
+  --color-gray-500: #4c5767;
+  --color-gray-400: #697185;
+  --color-gray-300: #8796a1;
+  --color-gray-200: #e8ecef;
+  --color-gray-100: #edf0f5;
+  --color-gray-50: #f8f9fd;
+  --color-white: #ffffff;
+  --color-gray-hovered: #5f6678;
+  --color-gray-pressed: #545a6a;
+
+  --color-black: #121212;
+  --color-gray: #848483;
+}
+
+:root {
+  --font-pretendard:
+    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-nanum-square: "NanumSquare", "Pretendard", sans-serif;
+
+  --ns-title-b-20-font: var(--font-nanum-square);
+  --ns-title-b-20-weight: 700;
+  --ns-title-b-20-size: 2rem;
+  --ns-title-b-20-line: 1.3;
+  --ns-title-b-20-track: 0;
+
+  --title-b-18-font: var(--font-pretendard);
+  --title-b-18-weight: 700;
+  --title-b-18-size: 1.8rem;
+  --title-b-18-line: 1.3;
+  --title-b-18-track: 0;
+
+  --title-sb-16-1_5-font: var(--font-pretendard);
+  --title-sb-16-1_5-weight: 600;
+  --title-sb-16-1_5-size: 1.6rem;
+  --title-sb-16-1_5-line: 1.3;
+  --title-sb-16-1_5-track: -0.015em;
+
+  --title-sb-16-2-font: var(--font-pretendard);
+  --title-sb-16-2-weight: 600;
+  --title-sb-16-2-size: 1.6rem;
+  --title-sb-16-2-line: 1.3;
+  --title-sb-16-2-track: -0.02em;
+
+  --body-md-14-font: var(--font-pretendard);
+  --body-md-14-weight: 500;
+  --body-md-14-size: 1.4rem;
+  --body-md-14-line: 1.3;
+  --body-md-14-track: 0;
+
+  --body-md-14-6_5-track: -0.065em;
+
+  --body-md-13-size: 1.3rem;
+  --body-md-13-track: 0;
+  --body-md-13-2-track: -0.02em;
+
+  --body-md-12-size: 1.2rem;
+}

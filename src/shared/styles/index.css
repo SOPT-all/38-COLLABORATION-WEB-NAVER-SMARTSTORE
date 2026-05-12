@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    font-size: 62.5%;
+  }
+
+  body {
+    width: 100%;
+    height: 100%;
+    font-family: var(--font-pretendard);
+    background-color: var(--color-gray-100);
+  }
+
+  button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  input {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer utilities {
+  /* Title */
+  .ns-title-b-20 {
+    font-family: var(--ns-title-b-20-font);
+    font-size: var(--ns-title-b-20-size);
+    font-weight: var(--ns-title-b-20-weight);
+    line-height: var(--ns-title-b-20-line);
+    letter-spacing: var(--ns-title-b-20-track);
+  }
+
+  .title-b-18 {
+    font-family: var(--title-b-18-font);
+    font-size: var(--title-b-18-size);
+    font-weight: var(--title-b-18-weight);
+    line-height: var(--title-b-18-line);
+    letter-spacing: var(--title-b-18-track);
+  }
+
+  .title-sb-16-1_5 {
+    font-family: var(--title-sb-16-1_5-font);
+    font-size: var(--title-sb-16-1_5-size);
+    font-weight: var(--title-sb-16-1_5-weight);
+    line-height: var(--title-sb-16-1_5-line);
+    letter-spacing: var(--title-sb-16-1_5-track);
+  }
+
+  .title-sb-16-2 {
+    font-family: var(--title-sb-16-2-font);
+    font-size: var(--title-sb-16-2-size);
+    font-weight: var(--title-sb-16-2-weight);
+    line-height: var(--title-sb-16-2-line);
+    letter-spacing: var(--title-sb-16-2-track);
+  }
+
+  /* Body */
+  .body-md-14 {
+    font-family: var(--body-md-14-font);
+    font-size: var(--body-md-14-size);
+    font-weight: var(--body-md-14-weight);
+    line-height: var(--body-md-14-line);
+    letter-spacing: var(--body-md-14-track);
+  }
+
+  .body-md-14-6_5 {
+    font-family: var(--body-md-14-font);
+    font-size: var(--body-md-14-size);
+    font-weight: var(--body-md-14-weight);
+    line-height: var(--body-md-14-line);
+    letter-spacing: var(--body-md-14-6_5-track);
+  }
+
+  .body-md-13-0 {
+    font-family: var(--font-pretendard);
+    font-size: var(--body-md-13-size);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: var(--body-md-13-track);
+  }
+
+  .body-md-13-2 {
+    font-family: var(--font-pretendard);
+    font-size: var(--body-md-13-size);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: var(--body-md-13-2-track);
+  }
+
+  .body-md-12 {
+    font-family: var(--font-pretendard);
+    font-size: var(--body-md-12-size);
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: 0;
+  }
+}

@@ -1,9 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
-import Layout from "./layout";
-import StoreHome from "../pages/store-home/store-home";
-import ProductRegister from "../pages/product-register/product-register";
-import ProductPreview from "../pages/product-preview/product-preview";
-import { routePath } from "./path";
+import { createBrowserRouter } from 'react-router-dom';
+
+import ProductPreview from '../pages/product-preview/product-preview';
+import ProductRegister from '../pages/product-register/product-register';
+import StoreHome from '../pages/store-home/store-home';
+import Layout from './layout';
+import { routePath } from './path';
 
 export const router = createBrowserRouter([
   {

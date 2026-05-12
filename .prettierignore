@@ -9,3 +9,6 @@ pnpm-lock.yaml
 
 # HTML ignore
 **/*.html
+
+# ✅️ SVG ignore
+**/*.svg

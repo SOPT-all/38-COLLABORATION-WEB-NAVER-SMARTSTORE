@@ -35,6 +35,7 @@ const SectionCard = ({
 }: SectionCardProps) => {
   return (
     <div className='flex flex-col items-start self-stretch'>
+      {/* 제목부 */}
       <div
         className={cn(
           'flex items-center border border-gray-200 bg-white py-[2rem]',
@@ -48,6 +49,7 @@ const SectionCard = ({
           hasQuestion={hasQuestion}
         />
       </div>
+      {/* 콘텐츠부(input) */}
       {children && (
         <div
           className={cn(

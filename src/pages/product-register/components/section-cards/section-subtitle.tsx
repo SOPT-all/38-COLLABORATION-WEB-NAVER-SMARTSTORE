@@ -21,9 +21,9 @@ const SectionSubtitle = ({
         className,
       )}
     >
-      <p className='body_md_13-2 text-text-black'>{title}</p>
+      <p className='body-md-13-2 text-text-black'>{title}</p>
       {(required || hasQuestion) && (
-        <div className='flex items-center gap-[0.5rem]'>
+        <div className='flex items-center gap-[0.3rem]'>
           {required && (
             <div className='bg-red h-[0.6rem] w-[0.6rem] rounded-full' />
           )}

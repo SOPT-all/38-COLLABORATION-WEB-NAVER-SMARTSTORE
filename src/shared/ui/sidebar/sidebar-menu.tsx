@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import { IcArrowDown, IcArrowUp } from '@shared/assets/icons';
+import { cn } from '@shared/utils/cn';
 
 interface SidebarMenuProps {
   text: string;
@@ -15,7 +16,7 @@ const SidebarMenu = ({
   onToggle,
 }: SidebarMenuProps) => {
   return (
-    <div>
+    <div className='bg-gray-600'>
       <button
         type='button'
         onClick={onToggle}
@@ -28,9 +29,18 @@ const SidebarMenu = ({
         {isOpen ? <IcArrowUp /> : <IcArrowDown />}
       </button>
 
-      {isOpen && (
-        <div className='flex flex-col items-center bg-gray-700'>{children}</div>
-      )}
+      <div
+        className={cn(
+          'grid transition-[grid-template-rows] duration-300 ease-in-out',
+          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]',
+        )}
+      >
+        <div className='overflow-hidden'>
+          <div className='flex flex-col items-center bg-gray-700'>
+            {children}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

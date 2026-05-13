@@ -1,10 +1,10 @@
 import type { SVGProps } from 'react';
 
 import IcAlarmSvg from './ic_alarm.svg?react';
+import IcArrowDiagonalSvg from './ic_arrow_diagonal.svg?react';
 import IcArrowDownSvg from './ic_arrow_down.svg?react';
 import IcArrowRightSvg from './ic_arrow_right.svg?react';
 import IcArrowUpSvg from './ic_arrow_up.svg?react';
-import IcArrowUp1Svg from './ic_arrow_up-1.svg?react';
 import IcHelpSvg from './ic_help.svg?react';
 import IcMakeItemSvg from './ic_makeItem.svg?react';
 import IcProhibitSvg from './ic_prohibit.svg?react';
@@ -28,21 +28,20 @@ export const IcTodo = (props: SvgProps) => <IcTodoSvg {...props} />;
 
 // 단색
 export const IcArrowDown = ({
-  className = 'text-text-gray',
+  className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowDownSvg className={className} {...props} />;
 export const IcArrowRight = ({
-  className = 'text-text-gray',
+  className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowRightSvg className={className} {...props} />;
-export const IcArrowUp = ({
-  className = 'text-text-gray',
+export const IcArrowDiagonal = ({
+  className = 'text-gray',
   ...props
-}: SvgProps) => <IcArrowUpSvg className={className} {...props} />;
-export const IcArrowUp1 = ({
-  className = 'text-white',
-  ...props
-}: SvgProps) => <IcArrowUp1Svg className={className} {...props} />;
+}: SvgProps) => <IcArrowDiagonalSvg className={className} {...props} />;
+export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcArrowUpSvg className={className} {...props} />
+);
 export const IcProhibit = ({ className = 'text-red', ...props }: SvgProps) => (
   <IcProhibitSvg className={className} {...props} />
 );
@@ -50,10 +49,10 @@ export const IcQuestion = ({
   className = 'text-green',
   ...props
 }: SvgProps) => <IcQuestionSvg className={className} {...props} />;
-export const IcSearch = ({
-  className = 'text-text-gray',
-  ...props
-}: SvgProps) => <IcSearchSvg className={className} {...props} />;
+
+export const IcSearch = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcSearchSvg className={className} {...props} />
+);
 export const IcSearch2 = ({
   className = 'text-gray-300',
   ...props

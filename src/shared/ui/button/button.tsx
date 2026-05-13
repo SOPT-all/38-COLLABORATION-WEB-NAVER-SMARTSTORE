@@ -6,7 +6,6 @@ type ButtonSize = "default" | "large";
 interface ButtonProps {
   color?: ButtonColor;
   size?: ButtonSize;
-  className?: string;
   children: string;
   onClick?: () => void;
 }
@@ -37,7 +36,6 @@ const BUTTON_SIZE_CLASS = {
 const Button = ({
   color = "green",
   size = "default",
-  className,
   children,
     onClick
 }: ButtonProps) => {
@@ -50,7 +48,6 @@ const Button = ({
         "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500",
         BUTTON_COLOR_CLASS[color],
         BUTTON_SIZE_CLASS[size],
-        className,
       )}
       type="button"
       onClick={onClick}

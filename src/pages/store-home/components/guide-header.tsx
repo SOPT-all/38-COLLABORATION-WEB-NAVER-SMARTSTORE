@@ -1,16 +1,13 @@
-import { cn } from "@shared/utils/cn";
-
 interface GuideHeaderProps {
   title: string;
-  subtitle: string;
-  className?: string;
+  description: string;
 }
 
-const GuideHeader = ({ title, subtitle, className }: GuideHeaderProps) => {
+const GuideHeader = ({ title, description }: GuideHeaderProps) => {
   return (
-    <header className={cn('inline-flex flex-col gap-[0.4rem]', className)}>
+    <header className='inline-flex flex-col gap-[0.4rem]'>
       <h2 className='title-b-18 text-black'>{title}</h2>
-      <p className='body-md-14 text-gray'>{subtitle}</p>
+      <p className='body-md-14 text-gray'>{description}</p>
     </header>
   );
 };

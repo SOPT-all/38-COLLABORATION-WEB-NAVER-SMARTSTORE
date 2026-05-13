@@ -5,8 +5,8 @@ import { cn } from '@shared/utils/cn';
 interface SidebarMenuProps {
   text: string;
   children?: ReactNode;
-  isOpen: boolean;
-  onToggle: () => void;
+  isOpen?: boolean;
+  onToggle?: () => void;
 }
 
 const SidebarMenu = ({
@@ -36,9 +36,7 @@ const SidebarMenu = ({
         )}
       >
         <div className='overflow-hidden'>
-          <div className='flex flex-col items-center bg-gray-700'>
-            {children}
-          </div>
+          <div className='flex flex-col bg-gray-700'>{children}</div>
         </div>
       </div>
     </div>

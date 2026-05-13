@@ -36,7 +36,7 @@ export const IcArrowRight = ({
   ...props
 }: SvgProps) => <IcArrowRightSvg className={className} {...props} />;
 export const IcArrowDiagonal = ({
-  className = 'text-gray',
+  className = 'text-white',
   ...props
 }: SvgProps) => <IcArrowDiagonalSvg className={className} {...props} />;
 export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (

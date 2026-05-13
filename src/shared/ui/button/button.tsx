@@ -1,7 +1,7 @@
 import { cn } from "@shared/utils/cn";
 
-export type ButtonColor = "white" | "green" | "gray";
-export type ButtonSize = "default" | "large";
+type ButtonColor = "white" | "green" | "gray";
+type ButtonSize = "default" | "large";
 
 interface ButtonProps {
   color?: ButtonColor;

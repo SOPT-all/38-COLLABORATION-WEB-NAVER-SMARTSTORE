@@ -10,7 +10,7 @@ interface SectionSubtitleProps {
 
 const SectionSubtitle = ({
   title,
-  required = false,
+  required = true,
   hasQuestion = false,
   className,
 }: SectionSubtitleProps) => {

@@ -2,7 +2,10 @@ import { IcArrowRightSmall } from '@shared/assets/icons';
 
 const ProductNameNotice = () => {
   return (
-    <div className='flex flex-col items-start gap-[0.7rem]'>
+    <div
+      id='product-name-notice'
+      className='flex flex-col items-start gap-[0.7rem]'
+    >
       {/* 첫번째 줄 */}
       <div className='flex items-start self-stretch'>
         <p className='body-md-12 text-green'>
@@ -18,7 +21,13 @@ const ProductNameNotice = () => {
           노출됩니다.
         </p>
         <div className='flex items-start'>
-          <a href='#' className='body-md-12 text-green w-[8.1rem] underline'>
+          <a
+            href='#'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label='검색 SEO 가이드 새 탭에서 열기'
+            className='body-md-12 text-green w-[8.1rem] underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500'
+          >
             검색 SEO 가이드
           </a>
           <div className='flex items-center gap-[0.4rem] p-[0.4rem]'>

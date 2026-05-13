@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 import { cn } from "@shared/utils/cn";
 
 export type ButtonColor = "white" | "green" | "gray";
@@ -9,7 +7,7 @@ interface ButtonProps {
   color?: ButtonColor;
   size?: ButtonSize;
   className?: string;
-  children: ReactNode;
+  children: string;
   onClick?: () => void;
 }
 

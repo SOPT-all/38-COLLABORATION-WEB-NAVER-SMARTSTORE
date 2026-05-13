@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import MissionButton from './mission-button';
 
 const STEPS = [
@@ -10,7 +8,7 @@ const STEPS = [
 ];
 
 const MissionButtonGroup = () => {
-  const [selected, setSelected] = useState(1);
+  const SELECTED_STEP = 1; 
 
   return (
     <div className='flex flex-col border border-gray-200 bg-gray-50 px-[2.4rem] py-[3.6rem] gap-[0.7rem]'>
@@ -22,9 +20,8 @@ const MissionButtonGroup = () => {
           <MissionButton
             step={step}
             label={label}
-            isSelected={selected === step}
+            isSelected={ SELECTED_STEP === step}
             disabled={step !== 1}
-            onClick={() => setSelected(step)}
           />
           {index < STEPS.length - 1 && (
             <div className='absolute top-[4rem] bottom-[-1.5rem] left-[3.1rem] w-[0.2rem] bg-gray-200' />

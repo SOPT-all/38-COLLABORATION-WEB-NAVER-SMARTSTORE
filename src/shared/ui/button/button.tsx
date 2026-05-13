@@ -11,21 +11,10 @@ interface ButtonProps {
 }
 
 const BUTTON_COLOR_CLASS = {
-  white: cn(
-    "border-gray-200 bg-white text-gray",
-    "hover:bg-gray-50",
-    "active:bg-gray-200",
-  ),
-  green: cn(
-    "border-green bg-green text-white",
-    "hover:border-green-hovered hover:bg-green-hovered",
-    "active:border-green-pressed active:bg-green-pressed",
-  ),
-  gray: cn(
-    "border-gray-400 bg-gray-400 text-white",
-    "hover:bg-gray-hovered",
-    "active:bg-gray-pressed",
-  ),
+  white: "border-gray-200 bg-white text-gray hover:bg-gray-50 active:bg-gray-200",
+  green:
+    "border-green bg-green text-white hover:border-green-hovered hover:bg-green-hovered active:border-green-pressed active:bg-green-pressed",
+  gray: "border-gray-400 bg-gray-400 text-white hover:bg-gray-hovered active:bg-gray-pressed",
 };
 
 const BUTTON_SIZE_CLASS = {
@@ -42,10 +31,7 @@ const Button = ({
   return (
     <button
       className={cn(
-        "inline-flex shrink-0 items-center justify-center",
-        "body-md-12 border whitespace-nowrap",
-        "transition-colors duration-100 ease-out",
-        "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500",
+        "body-md-12 border transition-colors duration-100 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500",
         BUTTON_COLOR_CLASS[color],
         BUTTON_SIZE_CLASS[size],
       )}

@@ -1,2 +1,3 @@
 # 38-COLLABORTION-WEB-NAVER-SMARTSTORE
+
 LETS SOPT 38기 합동 세미나 데스크탑 웹 1조 네이버 스마트스토어

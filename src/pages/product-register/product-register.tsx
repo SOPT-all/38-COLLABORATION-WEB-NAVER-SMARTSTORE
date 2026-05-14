@@ -4,7 +4,7 @@ const ProductRegister = () => {
   return (
     <>
       {/* 예시 코드 */}
-      <SectionCard title='카테고리' hasQuestion>
+      <SectionCard title='카테고리' hasQuestion className='w-[72.4rem]'>
         {/* input */}
       </SectionCard>
       <br />

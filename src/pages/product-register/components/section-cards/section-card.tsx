@@ -3,17 +3,11 @@ import type { ReactNode } from 'react';
 
 import SectionTitle from './section-title';
 
-const SECTION_WIDTH = {
-  default: 'w-[72.4rem]',
-  large: 'w-[103.4rem]',
-} as const;
-
 const SECTION_PADDING_X = {
   default: 'px-[3.6rem]',
   small: 'px-[2rem]',
 } as const;
 
-type SectionWidth = keyof typeof SECTION_WIDTH;
 type SectionPaddingX = keyof typeof SECTION_PADDING_X;
 
 interface SectionCardProps {
@@ -21,25 +15,24 @@ interface SectionCardProps {
   required?: boolean;
   hasQuestion?: boolean;
   children?: ReactNode;
-  width?: SectionWidth;
   paddingX?: SectionPaddingX;
+  className?: string;
 }
 
 const SectionCard = ({
   title,
-  required,
-  hasQuestion,
+  required = true,
+  hasQuestion = false,
   children,
-  width = 'default',
   paddingX = 'default',
+  className,
 }: SectionCardProps) => {
   return (
-    <div className='flex flex-col'>
+    <div className={cn('flex flex-col', className)}>
       {/* 제목부 */}
       <div
         className={cn(
           'flex items-center border border-gray-200 bg-white py-[2rem]',
-          SECTION_WIDTH[width],
           SECTION_PADDING_X[paddingX],
         )}
       >
@@ -54,7 +47,6 @@ const SectionCard = ({
         <div
           className={cn(
             'flex flex-col items-start border border-t-0 border-gray-200 bg-white py-[2rem]',
-            SECTION_WIDTH[width],
             SECTION_PADDING_X[paddingX],
           )}
         >

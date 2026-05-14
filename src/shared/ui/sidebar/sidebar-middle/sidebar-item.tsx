@@ -11,7 +11,6 @@ const SidebarItem = ({ label, isSelected, onClick }: SidebarItemProps) => {
     <button
       type='button'
       onClick={onClick}
-      aria-label={label}
       className={cn(
         'body-md-12 h-[4rem] w-[18.6rem] rounded-[8px] px-[1.2rem] text-left transition-colors duration-100 ease-in-out',
         isSelected

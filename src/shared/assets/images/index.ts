@@ -1,0 +1,1 @@
+export { default as StepContentImage } from './step_img1.png';

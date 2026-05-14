@@ -34,7 +34,7 @@ const SectionCard = ({
   paddingX = 'default',
 }: SectionCardProps) => {
   return (
-    <div className='flex flex-col items-start self-stretch'>
+    <div className='flex flex-col'>
       {/* 제목부 */}
       <div
         className={cn(

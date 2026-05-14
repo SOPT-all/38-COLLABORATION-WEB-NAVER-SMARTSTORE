@@ -21,7 +21,7 @@ const SectionTitle = ({
         className,
       )}
     >
-      <h2 className='title-sb-16-1_5 text-text-black'>{title}</h2>
+      <p className='title-sb-16-1_5 text-text-black'>{title}</p>
       {(required || hasQuestion) && (
         <div className='flex items-center gap-[0.3rem]'>
           {required && (

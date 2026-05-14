@@ -1,6 +1,6 @@
 interface MissionButtonProps {
   step: number;
-  label?: string;
+  label: string;
   isSelected?: boolean;
   disabled?: boolean;
   onClick?: () => void;

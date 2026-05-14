@@ -15,7 +15,6 @@ const MissionButton = ({
   disabled = false,
   onClick,
 }: MissionButtonProps) => {
-  const variant = isSelected ? 'selected' : 'default';
 
   return (
     <button

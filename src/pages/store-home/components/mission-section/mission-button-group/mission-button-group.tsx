@@ -8,23 +8,20 @@ const STEPS = [
 ];
 
 const MissionButtonGroup = () => {
-  const SELECTED_STEP = 1; 
+  const SELECTED_STEP = 1;
 
   return (
-    <div className='flex flex-col border border-gray-200 bg-gray-50 px-[2.4rem] py-[3.6rem] gap-[0.7rem]'>
+    <div className='flex flex-col gap-[0.7rem] border border-gray-200 bg-gray-50 px-[2.4rem] py-[3.6rem]'>
       {STEPS.map(({ step, label }, index) => (
-        <div
-          key={step}
-          className='relative'
-        >
+        <div key={step} className='relative'>
           <MissionButton
             step={step}
             label={label}
-            isSelected={ SELECTED_STEP === step}
+            isSelected={SELECTED_STEP === step}
             disabled={step !== 1}
           />
-          {index < STEPS.length - 1 && (
-            <div className='absolute top-[4rem] bottom-[-1.5rem] left-[3.1rem] w-[0.2rem] bg-gray-200' />
+          {index > 0 && (
+            <div className='absolute top-[-1.5rem] bottom-[4rem] left-[3.1rem] w-[0.2rem] bg-gray-200' />
           )}
         </div>
       ))}

@@ -10,7 +10,7 @@ const ProductRegister = () => {
       <br />
       <SectionCard title='카테고리' hasQuestion>
         {/* input */}
-        <SectionSubtitle title='상품명' required />
+        <SectionSubtitle title='상품명' required hasQuestion />
       </SectionCard>
     </>
   );

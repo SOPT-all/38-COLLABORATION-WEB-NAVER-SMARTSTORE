@@ -3,7 +3,7 @@ import { IcArrowDown, IcArrowUp } from '@shared/assets/icons';
 import { cn } from '@shared/utils/cn';
 
 interface SidebarMenuProps {
-  text: string;
+  text: ReactNode;
   children?: ReactNode;
   isOpen?: boolean;
   onToggle?: () => void;
@@ -12,7 +12,7 @@ interface SidebarMenuProps {
 const SidebarMenu = ({
   text,
   children,
-  isOpen,
+  isOpen = false,
   onToggle,
 }: SidebarMenuProps) => {
   return (

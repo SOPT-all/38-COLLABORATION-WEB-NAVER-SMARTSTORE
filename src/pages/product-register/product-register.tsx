@@ -1,3 +1,4 @@
+import ProductImageSection from './components/product-image-section/product-image-section';
 import { SectionCard, SectionSubtitle } from './components/section-cards';
 
 const ProductRegister = () => {
@@ -12,6 +13,7 @@ const ProductRegister = () => {
         {/* input */}
         <SectionSubtitle title='상품명' required hasQuestion />
       </SectionCard>
+      <ProductImageSection/>
     </>
   );
 };

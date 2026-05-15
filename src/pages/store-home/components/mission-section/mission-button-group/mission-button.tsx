@@ -15,13 +15,15 @@ const MissionButton = ({
   disabled = false,
   onClick,
 }: MissionButtonProps) => {
-
   return (
     <button
       type='button'
       aria-disabled={disabled}
       onClick={disabled ? undefined : onClick}
-      className={`flex w-[21.1rem] items-center gap-[1.6rem] rounded-[15px] px-[1.6rem] py-[0.8rem] transition-colors ${isSelected ? 'bg-blue-100' : 'bg-transparent hover:bg-gray-100'}`}
+      className={cn(
+        'flex w-[21.1rem] items-center gap-[1.6rem] rounded-[15px] px-[1.6rem] py-[0.8rem] transition-colors',
+        isSelected ? 'bg-blue-100' : 'bg-transparent hover:bg-gray-100',
+      )}
     >
       <div
         className={cn(

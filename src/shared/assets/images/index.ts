@@ -1,1 +1,1 @@
-export { default as StepContentImage } from './step_img1.png';
+export { default as StepContentImage } from './img_product_registration.webp';

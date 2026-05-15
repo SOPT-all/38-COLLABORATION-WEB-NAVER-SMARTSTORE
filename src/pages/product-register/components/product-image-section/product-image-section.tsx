@@ -1,17 +1,44 @@
+import { useState } from 'react';
 import { IcUnion } from '@shared/assets/icons';
 
 import { SectionCard, SectionSubtitle } from '../section-cards';
 
 const ProductImageSection = () => {
+  // 선택한 파일의 임시 URL 저장 (미리보기용)
+  const [preview, setPreview] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    // 파일 선택 없이 취소했을 때 방어 
+    if (!file) return;
+    // 선택한 파일을 임시 URL로 변환해서 즉시 미리보기
+    setPreview(URL.createObjectURL(file));
+  };
+
   return (
     <SectionCard title='상품이미지' required hasQuestion>
       <div className='flex items-start gap-[10rem]'>
         <SectionSubtitle title='대표이미지' required hasQuestion />
 
         <div className='flex flex-col gap-[0.8rem]'>
-          <div className='flex h-[12.8rem] w-[12.8rem] cursor-pointer items-center justify-center border border-dashed border-gray-300 bg-white'>
-            <IcUnion className='h-[3.45rem] w-[3.45rem] shrink-0 text-gray-300' />
-          </div>
+          <label className='flex h-[12.8rem] w-[12.8rem] cursor-pointer items-center justify-center overflow-hidden border border-dashed border-gray-300 bg-white'>
+            {/* preview 있으면 <img>, 없으면 아이콘 표시 */}
+            {preview ? (
+              <img
+                src={preview}
+                alt='대표이미지'
+                className='h-full w-full object-cover'
+              />
+            ) : (
+              <IcUnion className='h-[3.45rem] w-[3.45rem]' />
+            )}
+            <input
+              type='file'
+              accept='image/*'
+              onChange={handleChange}
+              className='hidden'
+            />
+          </label>
 
           <div className='flex flex-col gap-[0.7rem]'>
             <p className='text-green text-[1.2rem] leading-[1.3] font-medium'>

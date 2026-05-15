@@ -1,8 +1,6 @@
-import { StepContentImage } from '@shared/assets/images';
-
 import GuideHeader from '../guide-header';
 import MissionButtonGroup from './mission-button-group/mission-button-group';
-import StepContentCard from './step-content-card';
+import MissionContentCard from './mission-content-card/mission-content-card';
 
 const MissionSection = () => {
   return (
@@ -13,9 +11,8 @@ const MissionSection = () => {
       />
       <div className='mt-[1.6rem] flex h-[38rem]'>
         <MissionButtonGroup />
-        <StepContentCard
+        <MissionContentCard
           stepNumber={1}
-          imageSrc={StepContentImage}
           imageAlt={'이미지'}
         />
       </div>

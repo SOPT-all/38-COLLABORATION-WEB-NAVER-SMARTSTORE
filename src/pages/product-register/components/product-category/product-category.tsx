@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { SectionCard } from '../section-cards';
 import CategoryButtons from './category-buttons';
+import CategorySearchInput from './category-search-input';
 
 const ProductCategory = () => {
   const [mode, setMode] = useState<'search' | 'select'>('search');
@@ -14,7 +15,7 @@ const ProductCategory = () => {
           onSearchClick={() => setMode('search')}
           onSelectClick={() => setMode('select')}
         />
-        {mode === 'search' && <div>{/* 검색창 */}</div>}
+        {mode === 'search' && <CategorySearchInput />}
         {mode === 'select' && <div>{/* 셀렉트 박스 */}</div>}
       </div>
     </SectionCard>

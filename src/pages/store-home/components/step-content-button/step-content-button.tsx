@@ -18,7 +18,7 @@ export const StepContentButton = ({
       }
     >
       {text}
-      <IcArrowRight aria-hidden='true' />
+      <IcArrowRight aria-hidden='true' className='text-blue-600' />
     </button>
   );
 };

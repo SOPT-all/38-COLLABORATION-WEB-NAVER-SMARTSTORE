@@ -21,7 +21,7 @@ const ProductNameInput = ({
         maxLength={maxLength}
         aria-label='상품명 입력'
         aria-describedby='product-name-notice'
-        className='body-md-12 h-[3.4rem] w-[37rem] shrink-0 truncate border border-gray-200 bg-gray-50 p-[0.8rem] outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500'
+        className='body-md-12 focus:border-green h-[3.4rem] w-[37rem] shrink-0 truncate border border-gray-200 bg-gray-50 p-[0.8rem] outline-none focus:bg-white focus-visible:outline-none'
       />
       <div
         aria-live='polite'

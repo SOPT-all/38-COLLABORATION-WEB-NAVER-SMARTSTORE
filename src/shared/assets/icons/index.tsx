@@ -65,7 +65,6 @@ export const IcQuestion = ({
   className = 'text-green',
   ...props
 }: SvgProps) => <IcQuestionSvg className={className} {...props} />;
-
 export const IcSearch = ({ className = 'text-gray', ...props }: SvgProps) => (
   <IcSearchSvg className={className} {...props} />
 );

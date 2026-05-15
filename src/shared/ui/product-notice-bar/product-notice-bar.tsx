@@ -2,10 +2,8 @@ import { IcArrowRight, IcNaverCircle } from '@shared/assets/icons';
 import { Button } from '@shared/ui/button';
 import { cn } from '@shared/utils/cn';
 
-type ProductNoticeBarVariant = 'register' | 'preview';
-
 interface ProductNoticeBarProps {
-  variant: ProductNoticeBarVariant;
+  variant: 'register' | 'preview';
 }
 
 const NOTICE_BAR_TEXT = {

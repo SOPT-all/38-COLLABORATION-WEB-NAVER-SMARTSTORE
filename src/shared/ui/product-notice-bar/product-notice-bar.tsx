@@ -1,6 +1,7 @@
 import { IcArrowRight, IcNaverCircle } from '@shared/assets/icons';
 import { Button } from '@shared/ui/button';
 import { cn } from '@shared/utils/cn';
+import { useNavigate } from 'react-router-dom';
 
 interface ProductNoticeBarProps {
   variant: 'register' | 'preview';
@@ -20,20 +21,23 @@ const NOTICE_BAR_TEXT = {
 } as const;
 
 const ProductNoticeBar = ({ variant }: ProductNoticeBarProps) => {
+  const navigate = useNavigate();
   const { title, activeTab, tabs } = NOTICE_BAR_TEXT[variant];
 
   return (
     <section aria-label={`${title} 상단 공지`}>
       <div className='grid h-[6rem] grid-cols-[auto_1fr] border border-gray-200 bg-white'>
-        <div
+        <button
+          type='button'
           className='text-gray flex items-center border-r border-gray-200 bg-gray-100 px-[0.2rem]'
-          aria-hidden='true'
+          aria-label='이전 페이지로 이동'
+          onClick={() => navigate(-1)}
         >
           <IcArrowRight
             aria-hidden='true'
             className='size-[2.4rem] rotate-180'
           />
-        </div>
+        </button>
 
         <div className='flex items-center gap-[1.6rem] px-[2.8rem]'>
           <div className='flex shrink-0 items-center gap-[1.3rem]'>

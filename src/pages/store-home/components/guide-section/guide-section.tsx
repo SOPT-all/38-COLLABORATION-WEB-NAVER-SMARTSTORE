@@ -1,7 +1,7 @@
-import GuideImage1 from '@pages/store-home/assets/guide_image_1.png';
-import GuideImage2 from '@pages/store-home/assets/guide_image_2.png';
-import GuideImage3 from '@pages/store-home/assets/guide_image_3.png';
-import GuideImage4 from '@pages/store-home/assets/guide_image_4.png';
+import GuideImage1 from '@pages/store-home/assets/guide_image_1.webp';
+import GuideImage2 from '@pages/store-home/assets/guide_image_2.webp';
+import GuideImage3 from '@pages/store-home/assets/guide_image_3.webp';
+import GuideImage4 from '@pages/store-home/assets/guide_image_4.webp';
 import GuideHeader from '@pages/store-home/components/guide-header.tsx';
 import { IcArrowRight } from '@shared/assets/icons';
 

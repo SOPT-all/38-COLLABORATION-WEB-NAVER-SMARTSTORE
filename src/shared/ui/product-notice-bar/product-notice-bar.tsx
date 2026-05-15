@@ -25,20 +25,20 @@ const ProductNoticeBar = ({ variant }: ProductNoticeBarProps) => {
   const { title, activeTab, tabs } = NOTICE_BAR_TEXT[variant];
 
   return (
-    <section className='w-full bg-white' aria-label={`${title} 상단 공지`}>
+    <section aria-label={`${title} 상단 공지`}>
       <div className='grid h-[6rem] grid-cols-[auto_1fr] border border-gray-200 bg-white'>
         <div
-          className='text-gray flex h-full shrink-0 items-center border-r border-gray-200 bg-gray-100 px-[0.2rem]'
+          className='text-gray flex items-center border-r border-gray-200 bg-gray-100 px-[0.2rem]'
           aria-hidden='true'
         >
           <IcArrowRight
             aria-hidden='true'
-            className='text-gray size-[2.4rem] rotate-180'
+            className='size-[2.4rem] rotate-180'
           />
         </div>
 
-        <div className='flex h-full items-center gap-[1.6rem] border-r border-gray-200 px-[2.8rem]'>
-          <div className='flex h-full shrink-0 items-center gap-[1.3rem]'>
+        <div className='flex items-center gap-[1.6rem] px-[2.8rem]'>
+          <div className='flex shrink-0 items-center gap-[1.3rem]'>
             <h1 className='ns-title-b-20 text-black'>{title}</h1>
             <span className='body-md-14 text-red flex items-center gap-[0.4rem]'>
               <span
@@ -59,10 +59,10 @@ const ProductNoticeBar = ({ variant }: ProductNoticeBarProps) => {
       </div>
 
       <nav
-        className='flex h-[4.1rem] items-center border border-gray-200 bg-white px-[6rem]'
+        className='flex h-[4.1rem] border border-gray-200 bg-white px-[6rem]'
         aria-label={`${title} 탭`}
       >
-        <div className='flex h-full items-center gap-[4rem]'>
+        <div className='flex h-full gap-[4rem]'>
           {tabs.map((tab) => {
             const isActive = tab === activeTab;
 
@@ -72,7 +72,7 @@ const ProductNoticeBar = ({ variant }: ProductNoticeBarProps) => {
                 type='button'
                 className={cn(
                   'title-sb-16-1_5 relative flex h-full items-center justify-center whitespace-nowrap text-black',
-                  isActive && 'text-green w-[5.9rem] gap-[0.4rem] px-[0.4rem]',
+                  isActive && 'text-green w-[5.9rem] px-[0.4rem]',
                 )}
                 aria-current={isActive ? 'page' : undefined}
               >

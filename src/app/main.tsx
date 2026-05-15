@@ -8,6 +8,8 @@ import '@shared/styles/index.css';
 
 import '@shared/styles/index.css';
 
+import '@shared/styles/index.css';
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />

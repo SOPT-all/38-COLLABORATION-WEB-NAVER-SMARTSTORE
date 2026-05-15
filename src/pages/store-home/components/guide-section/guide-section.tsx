@@ -3,15 +3,11 @@ import GuideImage2 from '@pages/store-home/assets/guide_image_2.webp';
 import GuideImage3 from '@pages/store-home/assets/guide_image_3.webp';
 import GuideImage4 from '@pages/store-home/assets/guide_image_4.webp';
 import GuideHeader from '@pages/store-home/components/guide-header.tsx';
-import { IcArrowRight } from '@shared/assets/icons';
+import GuideContentItem, {
+  type GuideContentItemProps,
+} from '@pages/store-home/components/guide-section/guide-content-item/guide-content-item';
 
-type GuideContent = {
-  image: string;
-  title: string;
-  description: string;
-};
-
-const guideContents: GuideContent[] = [
+const guideContents: GuideContentItemProps[] = [
   {
     image: GuideImage1,
     title: '초보 사장님을 위한 스마트스토어 첫 가이드',
@@ -39,36 +35,6 @@ const guideContents: GuideContent[] = [
 ];
 
 const guideRows = [guideContents.slice(0, 2), guideContents.slice(2, 4)];
-
-const GuideContentItem = ({ image, title, description }: GuideContent) => {
-  return (
-    <article className='flex min-w-0 items-start gap-[2.4rem]'>
-      <img
-        src={image}
-        alt=''
-        className='h-[13.5rem] w-[21.4rem] flex-shrink-0 object-cover'
-      />
-
-      <div className='flex h-[13.5rem] min-w-0 flex-col items-start justify-between'>
-        <div className='flex flex-col gap-[0.8rem]'>
-          <h3 className='title-sb-16-1_5 text-black'>{title}</h3>
-          <p className='body-md-13-2 text-gray'>{description}</p>
-        </div>
-
-        <button
-          type='button'
-          className='body-md-13-2 flex items-center gap-[0.4rem] py-[0.8rem] pr-[0.8rem] text-blue-600'
-        >
-          가이드 영상 보기
-          <IcArrowRight
-            aria-hidden='true'
-            className='h-[2.4rem] w-[2.4rem] text-blue-600'
-          />
-        </button>
-      </div>
-    </article>
-  );
-};
 
 const GuideSection = () => {
   return (

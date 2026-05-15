@@ -1,11 +1,30 @@
 import { useState } from 'react';
-import { IcNaverCircle, IcNaverCircleRed } from '@shared/assets/icons';
+import { useNavigate } from 'react-router-dom';
 
 import SidebarItem from './sidebar-item';
 import SidebarMenu from './sidebar-menu';
 import SidebarSubTitle from './sidebar-sub-title';
 
-const PRODUCT_ITEMS = ['상품 조회/수정', '상품 등록', '공지사항 관리'];
+const GROUP_PRODUCT_ITEMS = [
+  '그룹상품 소개',
+  '그룹상품 등록',
+  '그룹상품 조회/수정',
+  '그룹상품 리뷰이동',
+  '그룹상품 노출 관리',
+];
+
+const PRODUCT_ITEMS: { label: string; to?: string }[] = [
+  { label: '상품 조회/수정', to: '/preview' },
+  { label: '상품 등록', to: '/register' },
+  { label: '상품 일괄등록' },
+  { label: '카탈로그 가격관리' },
+  { label: '연관상품 관리' },
+  { label: '사진 보관함' },
+  { label: '배송정보 관리' },
+  { label: '템플릿 관리' },
+  { label: '공지사항 관리' },
+  { label: '구독 관리' },
+];
 
 const STATIC_MENUS: { label: string; badge?: 'npay' | 'n' }[] = [
   { label: '판매관리', badge: 'npay' },
@@ -23,8 +42,15 @@ const STATIC_MENUS: { label: string; badge?: 'npay' | 'n' }[] = [
 ];
 
 const Middle = () => {
+  const navigate = useNavigate();
   const [isProductOpen, setIsProductOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const [selectedItem, setSelectedItem] = useState<string>();
+
+  const handleItemClick = (label: string, to?: string) => {
+    if (!to) return;
+    setSelectedItem(label);
+    navigate(to);
+  };
 
   return (
     <div className='border-t-gray-600 bg-gray-600 pt-[1.8rem]'>
@@ -34,27 +60,27 @@ const Middle = () => {
         onToggle={() => setIsProductOpen((prev) => !prev)}
       >
         <SidebarSubTitle text='그룹상품 관리' />
-        {PRODUCT_ITEMS.map((item) => (
+        {GROUP_PRODUCT_ITEMS.map((item) => (
           <SidebarItem
             key={item}
             label={item}
             isSelected={selectedItem === item}
-            onClick={() => setSelectedItem(item)}
+          />
+        ))}
+
+        <SidebarSubTitle text='상품 관리' />
+        {PRODUCT_ITEMS.map(({ label, to }) => (
+          <SidebarItem
+            key={label}
+            label={label}
+            isSelected={selectedItem === label}
+            onClick={() => handleItemClick(label, to)}
           />
         ))}
       </SidebarMenu>
 
       {STATIC_MENUS.map(({ label, badge }) => (
-        <SidebarMenu
-          key={label}
-          text={
-            <span className='flex items-center'>
-              {label}
-              {badge === 'npay' && <IcNaverCircle />}
-              {badge === 'n' && <IcNaverCircleRed />}
-            </span>
-          }
-        />
+        <SidebarMenu key={label} text={label} badge={badge} />
       ))}
     </div>
   );

@@ -1,10 +1,10 @@
 import { IcArrowDown, IcSearch } from '@shared/assets/icons';
 import IcProfileSvg from '@shared/assets/icons/ic_profile.svg';
 
-const Profile = () => {
+const SidebarProfile = () => {
   return (
     <div className='flex flex-col items-center bg-gray-700 px-[2rem] py-[2.8rem]'>
-      <img src={IcProfileSvg} alt='profile' />
+      <img src={IcProfileSvg} alt='' />
       <p className='title-b-18 mt-[1.6rem] mb-[0.4rem] text-white'>
         Testing Store
       </p>
@@ -16,15 +16,15 @@ const Profile = () => {
       </button>
 
       <div className='flex w-full rounded-[8px] bg-gray-800 px-[1rem] py-[0.6rem]'>
-        <IcSearch />
+        <IcSearch className='text-gray shrink-0' />
         <input
           type='text'
           placeholder='입력 후 검색하세요.'
-          className='body-md-12 text-white placeholder:text-gray-300'
+          className='body-md-12 placeholder:text-gray min-w-0 text-white'
         />
       </div>
     </div>
   );
 };
 
-export default Profile;
+export default SidebarProfile;

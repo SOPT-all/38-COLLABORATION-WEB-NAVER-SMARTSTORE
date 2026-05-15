@@ -18,7 +18,6 @@ const MissionButtonGroup = () => {
             step={step}
             label={label}
             isSelected={SELECTED_STEP === step}
-            disabled={step !== 1}
           />
           {index > 0 && (
             <div className='absolute top-[-1.5rem] bottom-[4rem] left-[3.1rem] w-[0.2rem] bg-gray-200' />

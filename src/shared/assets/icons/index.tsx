@@ -7,6 +7,8 @@ import IcArrowRightSvg from './ic_arrow_right.svg?react';
 import IcArrowUpSvg from './ic_arrow_up.svg?react';
 import IcHelpSvg from './ic_help.svg?react';
 import IcMakeItemSvg from './ic_makeItem.svg?react';
+import IcNaverCircleSvg from './ic_naverCircle.svg?react';
+import IcNaverCircleRedSvg from './ic_naverCircle_red.svg?react';
 import IcProfileSvg from './ic_profile.svg';
 import IcProhibitSvg from './ic_prohibit.svg?react';
 import IcQuestionSvg from './ic_question.svg?react';
@@ -26,7 +28,13 @@ export const IcHelp = (props: SvgProps) => <IcHelpSvg {...props} />;
 export const IcSolution = (props: SvgProps) => <IcSolutionSvg {...props} />;
 export const IcTalktalk = (props: SvgProps) => <IcTalktalkSvg {...props} />;
 export const IcTodo = (props: SvgProps) => <IcTodoSvg {...props} />;
+export const IcNaverCircleRed = (props: SvgProps) => (
+  <IcNaverCircleRedSvg {...props} />
+);
 export const IcProfile = (props: SvgProps) => <IcProfileSvg {...props} />;
+export const IcNaverCircle = (props: SvgProps) => (
+  <IcNaverCircleSvg {...props} />
+);
 
 // 단색
 export const IcArrowDown = ({

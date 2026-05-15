@@ -23,34 +23,6 @@ type HomeNoticeBarProps = {
   notices: HomeNotice[];
 };
 
-type TextProps = {
-  children: string;
-};
-
-type NoticeDateProps = TextProps & {
-  dateTime: string;
-};
-
-const NoticeTypeBadge = ({ children }: TextProps) => {
-  return (
-    <span className='body-md-12 flex shrink-0 items-center justify-center gap-[1rem] bg-blue-100 px-[0.8rem] text-blue-500'>
-      {children}
-    </span>
-  );
-};
-
-const NoticeTitle = ({ children }: TextProps) => {
-  return <strong className='body-md-14 truncate text-black'>{children}</strong>;
-};
-
-const NoticeDate = ({ dateTime, children }: NoticeDateProps) => {
-  return (
-    <time className={cn('body-md-13-0 text-gray shrink-0')} dateTime={dateTime}>
-      {children}
-    </time>
-  );
-};
-
 const HomeNoticeItem = ({ notice }: { notice: HomeNotice }) => {
   const noticeTypeLabel =
     NOTICE_TYPE_LABEL[notice.noticeType] ?? notice.noticeType;
@@ -63,10 +35,17 @@ const HomeNoticeItem = ({ notice }: { notice: HomeNotice }) => {
         HOME_NOTICE_BAR_ITEM_HEIGHT_CLASS,
       )}
     >
-      <NoticeTypeBadge>{noticeTypeLabel}</NoticeTypeBadge>
-      <NoticeTitle>{notice.title}</NoticeTitle>
+      <span className='body-md-12 flex shrink-0 items-center justify-center gap-[1rem] bg-blue-100 px-[0.8rem] text-blue-500'>
+        {noticeTypeLabel}
+      </span>
+      <strong className='body-md-14 truncate text-black'>{notice.title}</strong>
       {noticeDate && (
-        <NoticeDate dateTime={notice.createdAt}>{noticeDate}</NoticeDate>
+        <time
+          className='body-md-13-0 text-gray shrink-0'
+          dateTime={notice.createdAt}
+        >
+          {noticeDate}
+        </time>
       )}
     </div>
   );

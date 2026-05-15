@@ -38,13 +38,13 @@ const guideRows = [guideContents.slice(0, 2), guideContents.slice(2, 4)];
 
 const GuideSection = () => {
   return (
-    <section className='flex flex-col items-start gap-[1.6rem] self-stretch'>
+    <section className='flex flex-col gap-[1.6rem] self-stretch'>
       <GuideHeader
         title='첫 판매를 만들기 위해 꼭 보고 가시면 좋은 판매 가이드'
         description='사장님의 첫 판매를 위해 스마트스토어 담당자가 직접 안내하는 판매 팁을 꼭 확인해보세요.'
       />
 
-      <div className='flex w-full flex-col items-start gap-[2.4rem] border border-gray-200 bg-white p-[2.4rem]'>
+      <div className='flex w-full flex-col gap-[2.4rem] border border-gray-200 bg-white p-[2.4rem]'>
         {guideRows.map((row) => (
           <div
             key={row.map(({ title }) => title).join('-')}

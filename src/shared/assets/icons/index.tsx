@@ -7,6 +7,7 @@ import IcArrowRightSvg from './ic_arrow_right.svg?react';
 import IcArrowUpSvg from './ic_arrow_up.svg?react';
 import IcHelpSvg from './ic_help.svg?react';
 import IcMakeItemSvg from './ic_makeItem.svg?react';
+import IcProfileSvg from './ic_profile.svg';
 import IcProhibitSvg from './ic_prohibit.svg?react';
 import IcQuestionSvg from './ic_question.svg?react';
 import IcSearchSvg from './ic_search.svg?react';
@@ -25,6 +26,7 @@ export const IcHelp = (props: SvgProps) => <IcHelpSvg {...props} />;
 export const IcSolution = (props: SvgProps) => <IcSolutionSvg {...props} />;
 export const IcTalktalk = (props: SvgProps) => <IcTalktalkSvg {...props} />;
 export const IcTodo = (props: SvgProps) => <IcTodoSvg {...props} />;
+export const IcProfile = (props: SvgProps) => <IcProfileSvg {...props} />;
 
 // 단색
 export const IcArrowDown = ({

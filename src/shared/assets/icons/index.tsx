@@ -5,6 +5,7 @@ import IcArrowDownSvg from './ic_arrow_down.svg?react';
 import IcArrowRightSvg from './ic_arrow_right.svg?react';
 import IcArrowUpSvg from './ic_arrow_up.svg?react';
 import IcArrowUp1Svg from './ic_arrow_up-1.svg?react';
+import IcHeartSvg from './ic_heart.svg?react';
 import IcHelpSvg from './ic_help.svg?react';
 import IcMakeItemSvg from './ic_makeItem.svg?react';
 import IcProhibitSvg from './ic_prohibit.svg?react';
@@ -28,17 +29,20 @@ export const IcTodo = (props: SvgProps) => <IcTodoSvg {...props} />;
 
 // 단색
 export const IcArrowDown = ({
-  className = 'text-text-gray',
+  className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowDownSvg className={className} {...props} />;
+export const IcHeart = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcHeartSvg className={className} {...props} />
+);
+
 export const IcArrowRight = ({
-  className = 'text-text-gray',
+  className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowRightSvg className={className} {...props} />;
-export const IcArrowUp = ({
-  className = 'text-text-gray',
-  ...props
-}: SvgProps) => <IcArrowUpSvg className={className} {...props} />;
+export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcArrowUpSvg className={className} {...props} />
+);
 export const IcArrowUp1 = ({
   className = 'text-white',
   ...props

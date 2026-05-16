@@ -43,17 +43,21 @@ export const IcArrowDown = ({
   className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowDownSvg className={className} {...props} />;
+export const IcHeart = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcHeartSvg className={className} {...props} />
+);
+
 export const IcArrowRight = ({
   className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowRightSvg className={className} {...props} />;
+export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcArrowUpSvg className={className} {...props} />
+);
 export const IcArrowDiagonal = ({
   className = 'text-white',
   ...props
 }: SvgProps) => <IcArrowDiagonalSvg className={className} {...props} />;
-export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (
-  <IcArrowUpSvg className={className} {...props} />
-);
 export const IcProhibit = ({ className = 'text-red', ...props }: SvgProps) => (
   <IcProhibitSvg className={className} {...props} />
 );

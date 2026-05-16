@@ -10,7 +10,7 @@ const ProductNameInput = ({
   maxLength = 100,
 }: ProductNameInputProps) => {
   return (
-    <div className='flex h-[3.4rem] items-center'>
+    <div className='flex h-[3.4rem]'>
       <input
         type='text'
         value={value}

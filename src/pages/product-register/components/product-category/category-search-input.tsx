@@ -41,23 +41,27 @@ const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
             }}
             placeholder='카테고리명 입력'
             className='body-md-12 placeholder:text-gray flex-1 bg-transparent text-black outline-none'
+            aria-label='카테고리명 검색'
+            aria-controls='category-search-list'
           />
-          <button type='button' onClick={() => {}}>
+          <button aria-label='검색' type='button' onClick={() => {}}>
             <IcSearch2 />
           </button>
         </div>
       </div>
-      {value &&
-        !selected &&
-        (filtered.length > 0 ? (
-          <CategorySearchList
-            items={filtered}
-            highlight={value}
-            onSelect={handleSelect}
-          />
-        ) : (
-          <CategorySearchEmpty highlight={value} />
-        ))}
+      <div aria-live='polite'>
+        {value &&
+          !selected &&
+          (filtered.length > 0 ? (
+            <CategorySearchList
+              items={filtered}
+              highlight={value}
+              onSelect={handleSelect}
+            />
+          ) : (
+            <CategorySearchEmpty highlight={value} />
+          ))}
+      </div>
     </div>
   );
 };

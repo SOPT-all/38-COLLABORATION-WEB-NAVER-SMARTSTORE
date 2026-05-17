@@ -34,14 +34,25 @@ const CategorySelectInput = ({ onSelect }: CategorySelectInputProps) => {
           >
             {selected ? selected.name : '선택'}
           </span>
-          <button type='button' onClick={() => setIsOpen((prev) => !prev)}>
+          <button
+            aria-expanded={isOpen}
+            aria-haspopup='listbox'
+            aria-label='카테고리 선택'
+            type='button'
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
             <IcTriangleUp className={cn(isOpen && 'rotate-180')} />
           </button>
         </div>
       </div>
-      {isOpen && (
-        <CategorySelectList items={DUMMY_CATEGORIES} onSelect={handleSelect} />
-      )}
+      <div aria-live='polite'>
+        {isOpen && (
+          <CategorySelectList
+            items={DUMMY_CATEGORIES}
+            onSelect={handleSelect}
+          />
+        )}
+      </div>
     </div>
   );
 };

@@ -17,7 +17,12 @@ const CategorySearchList = ({
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
   return (
-    <div className='flex flex-col items-start border border-t-0 border-gray-200'>
+    <div
+      id='category-search-list'
+      role='listbox'
+      aria-label='카테고리 검색 결과'
+      className='flex flex-col items-start border border-t-0 border-gray-200'
+    >
       {items.map((item, index) => (
         <CategorySearchItem
           key={item.id}

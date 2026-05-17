@@ -8,7 +8,7 @@ interface CategoryNoticeProps {
 
 const CategoryNotice = ({ selectedCategory }: CategoryNoticeProps) => {
   return (
-    <div className='flex flex-col items-start gap-[0.8rem]'>
+    <div aria-live='polite' className='flex flex-col items-start gap-[0.8rem]'>
       {selectedCategory ? (
         <>
           <div className='flex items-center'>

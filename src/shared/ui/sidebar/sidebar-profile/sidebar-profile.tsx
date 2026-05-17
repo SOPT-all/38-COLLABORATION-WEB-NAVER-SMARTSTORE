@@ -10,7 +10,10 @@ const SidebarProfile = () => {
       </p>
       <span className='body-md-13-2 text-gray mb-[3.2rem]'>통합 매니저</span>
 
-      <button className='body-md-13-2 mb-[0.4rem] flex w-full items-center justify-between rounded-[8px] bg-gray-800 py-[0.6rem] pl-[1rem] text-white'>
+      <button
+        type='button'
+        className='body-md-13-2 mb-[0.4rem] flex w-full items-center justify-between rounded-[8px] bg-gray-800 py-[0.6rem] pl-[1rem] text-white'
+      >
         수취인명
         <IcArrowDown />
       </button>
@@ -18,9 +21,9 @@ const SidebarProfile = () => {
       <div className='flex w-full rounded-[8px] bg-gray-800 px-[1rem] py-[0.6rem]'>
         <IcSearch className='text-gray shrink-0' />
         <input
-          type='text'
+          type='search'
           placeholder='입력 후 검색하세요.'
-          className='body-md-12 placeholder:text-gray min-w-0 text-white'
+          className='body-md-12 placeholder:text-gray min-w-0 text-white [&::-webkit-search-cancel-button]:hidden'
         />
       </div>
     </div>

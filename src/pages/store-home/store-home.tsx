@@ -1,20 +1,5 @@
-import FloatingMenu from '@shared/ui/floating-menu/floating-menu';
-
-import MissionSection from './components/mission-section/mission-section';
-
 const StoreHome = () => {
-  return (
-    <>
-      <FloatingMenu />
-      <MissionSection />
-      <MissionSection />
-      <MissionSection />
-      <MissionSection />
-      <MissionSection />
-      <MissionSection />
-      <MissionSection />
-    </>
-  );
+  return <></>;
 };
 
 export default StoreHome;

@@ -12,7 +12,7 @@ const SidebarItem = ({ label, isSelected, onClick }: SidebarItemProps) => {
       type='button'
       onClick={onClick}
       className={cn(
-        'body-md-12 h-[4rem] w-[18.6rem] rounded-[8px] px-[1.2rem] text-left transition-colors duration-100 ease-in-out',
+        'body-md-12 mx-[1.2rem] h-[4rem] w-[18.6rem] rounded-[8px] px-[1.2rem] text-left transition-colors duration-100 ease-in-out',
         isSelected
           ? 'text-green bg-gray-800'
           : 'bg-gray-700 text-white hover:bg-gray-600',

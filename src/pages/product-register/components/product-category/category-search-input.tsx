@@ -11,13 +11,18 @@ const DUMMY_CATEGORIES: Category[] = [
   { id: 3, name: '화장품/미용' },
 ];
 
-const CategorySearchInput = () => {
+interface CategorySearchInputProps {
+  onSelect: (category: Category) => void;
+}
+
+const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
   const [value, setValue] = useState('');
   const [selected, setSelected] = useState<Category | null>(null);
 
   const handleSelect = (item: Category) => {
     setSelected(item);
     setValue(item.name);
+    onSelect(item);
   };
 
   const filtered = DUMMY_CATEGORIES.filter((item) => item.name.includes(value));

@@ -2,10 +2,15 @@ import { useState } from 'react';
 
 import { SectionCard } from '../section-cards';
 import CategoryButtons from './category-buttons';
+import CategoryNotice from './category-notice';
 import CategorySearchInput from './category-search-input';
+import type { Category } from './types';
 
 const ProductCategory = () => {
   const [mode, setMode] = useState<'search' | 'select'>('search');
+  const [selectedCategory, setSelectedCategory] = useState<Category | null>(
+    null,
+  );
 
   return (
     <SectionCard title='카테고리' hasQuestion className='w-[72.4rem]'>
@@ -15,8 +20,11 @@ const ProductCategory = () => {
           onSearchClick={() => setMode('search')}
           onSelectClick={() => setMode('select')}
         />
-        {mode === 'search' && <CategorySearchInput />}
-        {mode === 'select' && <div>{/* 셀렉트 박스 */}</div>}
+        {mode === 'search' && (
+          <CategorySearchInput onSelect={setSelectedCategory} />
+        )}
+        {mode === 'select' && <div />}
+        <CategoryNotice selectedCategory={selectedCategory} />
       </div>
     </SectionCard>
   );

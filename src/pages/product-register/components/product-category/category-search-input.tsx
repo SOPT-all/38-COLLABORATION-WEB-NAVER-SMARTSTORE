@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { IcSearch2 } from '@shared/assets/icons';
 
+import CategorySearchEmpty from './category-search-empty';
 import CategorySearchList from './category-search-list';
 import type { Category } from './types';
 
@@ -18,6 +19,8 @@ const CategorySearchInput = () => {
     setSelected(item);
     setValue(item.name);
   };
+
+  const filtered = DUMMY_CATEGORIES.filter((item) => item.name.includes(value));
 
   return (
     <div className='flex flex-col'>
@@ -38,13 +41,17 @@ const CategorySearchInput = () => {
           </button>
         </div>
       </div>
-      {value && !selected && (
-        <CategorySearchList
-          items={DUMMY_CATEGORIES}
-          highlight={value}
-          onSelect={handleSelect}
-        />
-      )}
+      {value &&
+        !selected &&
+        (filtered.length > 0 ? (
+          <CategorySearchList
+            items={filtered}
+            highlight={value}
+            onSelect={handleSelect}
+          />
+        ) : (
+          <CategorySearchEmpty highlight={value} />
+        ))}
     </div>
   );
 };

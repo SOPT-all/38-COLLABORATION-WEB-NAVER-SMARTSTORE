@@ -15,6 +15,7 @@ const CategorySearchList = ({
   onSelect,
 }: CategorySearchListProps) => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
+
   return (
     <div className='flex flex-col items-start border border-gray-200'>
       {items.map((item, index) => (

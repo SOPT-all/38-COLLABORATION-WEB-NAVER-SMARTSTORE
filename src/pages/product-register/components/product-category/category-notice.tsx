@@ -20,7 +20,7 @@ const CategoryNotice = ({ selectedCategory }: CategoryNoticeProps) => {
         </>
       ) : (
         <div className='flex items-center gap-[0.1rem]'>
-          <IcProhibit />
+          <IcProhibit className='text-red h-[1.2rem] w-[1.2rem]' />
           <p className='body-md-12 text-red'>
             최종 카테고리까지 선택해 주세요.
           </p>

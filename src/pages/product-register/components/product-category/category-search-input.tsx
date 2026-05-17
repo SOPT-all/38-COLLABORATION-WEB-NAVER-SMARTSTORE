@@ -12,7 +12,7 @@ const DUMMY_CATEGORIES: Category[] = [
 ];
 
 interface CategorySearchInputProps {
-  onSelect: (category: Category) => void;
+  onSelect: (category: Category | null) => void;
 }
 
 const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
@@ -37,6 +37,7 @@ const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
             onChange={(e) => {
               setValue(e.target.value);
               setSelected(null);
+              if (e.target.value === '') onSelect(null);
             }}
             placeholder='카테고리명 입력'
             className='body-md-12 placeholder:text-gray flex-1 bg-transparent text-black outline-none'

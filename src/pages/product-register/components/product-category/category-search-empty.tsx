@@ -7,7 +7,7 @@ const CategorySearchEmpty = ({ highlight }: CategorySearchEmptyProps) => {
   const index = text.indexOf(highlight);
 
   return (
-    <div className='flex flex-col border border-gray-200'>
+    <div className='flex flex-col border border-t-0 border-gray-200'>
       <div className='flex h-[3.4rem] flex-col items-start justify-center gap-[0.4rem] bg-gray-100 px-[1.2rem] py-[0.4rem]'>
         <div className='flex items-start gap-[0.4rem]'>
           <span className='body-md-12 text-green'>

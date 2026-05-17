@@ -17,7 +17,7 @@ const CategorySearchList = ({
   const [hoveredIndex, setHoveredIndex] = useState(0);
 
   return (
-    <div className='flex flex-col items-start border border-gray-200'>
+    <div className='flex flex-col items-start border border-t-0 border-gray-200'>
       {items.map((item, index) => (
         <CategorySearchItem
           key={item.id}

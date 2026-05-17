@@ -13,7 +13,6 @@ const MissionSection = () => {
         <MissionButtonGroup />
         <MissionContentCard
           stepNumber={1}
-          imageAlt={'이미지'}
         />
       </div>
     </section>

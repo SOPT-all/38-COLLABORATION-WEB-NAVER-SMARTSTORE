@@ -5,12 +5,10 @@ import { StepContentButton } from '../../step-content-button/step-content-button
 
 interface MissionContentCardProps {
   stepNumber: number;
-  imageAlt: string;
 }
 
 export default function MissionContentCard({
-  stepNumber,
-  imageAlt = '',
+  stepNumber
 }: MissionContentCardProps) {
   const navigate = useNavigate();
   return (
@@ -42,7 +40,6 @@ export default function MissionContentCard({
 
       <img
         src={MissionContentImage}
-        alt={imageAlt}
         className='object-contain'
       />
     </div>

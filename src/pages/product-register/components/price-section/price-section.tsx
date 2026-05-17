@@ -1,15 +1,7 @@
-import { cn } from '@shared/utils/cn';
+import { useState } from 'react';
 
 import { SectionCard, SectionSubtitle } from '../section-cards';
-
-const buttonClass = (active: boolean) =>
-  cn(
-    'body-md-13-2 h-[3.4rem] w-[11.6rem] border px-[2rem] py-[0.8rem]',
-    '-ml-[0.1rem] first:ml-0',
-    active
-      ? 'border-green bg-green text-white'
-      : 'border-gray-200 bg-white text-gray',
-  );
+import SegmentedToggle from '../toggles/segmented-toggle';
 
 const rowClass =
   'flex w-full items-start gap-[4rem] border-b border-gray-200 pb-[0.8rem]';
@@ -19,9 +11,13 @@ const lastRowClass = 'flex w-full items-start gap-[4rem]';
 const labelClass = 'flex h-[4rem] w-[12rem] shrink-0 items-center';
 
 const PriceSection = () => {
+  const [discount, setDiscount] = useState('설정안함');
+  const [salePeriod, setSalePeriod] = useState('설정안함');
+  const [tax, setTax] = useState('과세상품');
+
   return (
     <SectionCard title='판매가' paddingX='small' className='w-[103.4rem]'>
-      <div className='flex flex-col gap-[1.2rem]'>
+      <section className='flex flex-col gap-[1.2rem]'>
         <div className={rowClass}>
           <div className={labelClass}>
             <SectionSubtitle title='판매가' hasQuestion />
@@ -65,14 +61,12 @@ const PriceSection = () => {
             <SectionSubtitle title='즉시할인' required={false} />
           </div>
 
-          <div className='flex'>
-            <button type='button' className={buttonClass(false)}>
-              설정함
-            </button>
-            <button type='button' className={buttonClass(true)}>
-              설정안함
-            </button>
-          </div>
+          <SegmentedToggle
+            options={['설정함', '설정안함']}
+            selectedOption={discount}
+            onChange={setDiscount}
+            ariaLabel='즉시할인 설정'
+          />
         </div>
 
         <div className={rowClass}>
@@ -80,14 +74,12 @@ const PriceSection = () => {
             <SectionSubtitle title='판매기간' required={false} />
           </div>
 
-          <div className='flex'>
-            <button type='button' className={buttonClass(false)}>
-              설정함
-            </button>
-            <button type='button' className={buttonClass(true)}>
-              설정안함
-            </button>
-          </div>
+          <SegmentedToggle
+            options={['설정함', '설정안함']}
+            selectedOption={salePeriod}
+            onChange={setSalePeriod}
+            ariaLabel='판매기간 설정'
+          />
         </div>
 
         <div className={lastRowClass}>
@@ -95,19 +87,14 @@ const PriceSection = () => {
             <SectionSubtitle title='부가세' />
           </div>
 
-          <div className='flex'>
-            <button type='button' className={buttonClass(true)}>
-              과세상품
-            </button>
-            <button type='button' className={buttonClass(false)}>
-              면세상품
-            </button>
-            <button type='button' className={buttonClass(false)}>
-              영세상품
-            </button>
-          </div>
+          <SegmentedToggle
+            options={['과세상품', '면세상품', '영세상품']}
+            selectedOption={tax}
+            onChange={setTax}
+            ariaLabel='부가세 설정'
+          />
         </div>
-      </div>
+      </section>
     </SectionCard>
   );
 };

@@ -14,7 +14,7 @@ const ProductCategory = () => {
   );
 
   return (
-    <SectionCard title='카테고리' hasQuestion className='w-[72.4rem]'>
+    <SectionCard title='카테고리' hasQuestion>
       <div className='flex w-full flex-col gap-[1.2rem]'>
         <CategoryButtons
           mode={mode}

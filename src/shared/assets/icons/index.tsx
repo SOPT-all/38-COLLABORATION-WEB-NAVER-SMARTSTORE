@@ -1,6 +1,7 @@
 import type { SVGProps } from 'react';
 
 import IcAlarmSvg from './ic_alarm.svg?react';
+import IcNaverLogoSvg from './ic_naver_logo.svg?react';
 import IcArrowDiagonalSvg from './ic_arrow_diagonal.svg?react';
 import IcArrowDownSvg from './ic_arrow_down.svg?react';
 import IcArrowRightSvg from './ic_arrow_right.svg?react';
@@ -25,6 +26,7 @@ import IconUpSvg from './icon_up.svg?react';
 type SvgProps = SVGProps<SVGSVGElement>;
 
 // 멀티컬러
+export const IcNaverLogo = (props: SvgProps) => <IcNaverLogoSvg {...props} />;
 export const IcAlarm = (props: SvgProps) => <IcAlarmSvg {...props} />;
 export const IcHelp = (props: SvgProps) => <IcHelpSvg {...props} />;
 export const IcSolution = (props: SvgProps) => <IcSolutionSvg {...props} />;

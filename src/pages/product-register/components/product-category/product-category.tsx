@@ -4,6 +4,7 @@ import { SectionCard } from '../section-cards';
 import CategoryButtons from './category-buttons';
 import CategoryNotice from './category-notice';
 import CategorySearchInput from './category-search-input';
+import CategorySelectInput from './category-select-input';
 import type { Category } from './types';
 
 const ProductCategory = () => {
@@ -17,13 +18,21 @@ const ProductCategory = () => {
       <div className='flex w-full flex-col gap-[1.2rem]'>
         <CategoryButtons
           mode={mode}
-          onSearchClick={() => setMode('search')}
-          onSelectClick={() => setMode('select')}
+          onSearchClick={() => {
+            setMode('search');
+            setSelectedCategory(null);
+          }}
+          onSelectClick={() => {
+            setMode('select');
+            setSelectedCategory(null);
+          }}
         />
         {mode === 'search' && (
           <CategorySearchInput onSelect={setSelectedCategory} />
         )}
-        {mode === 'select' && <div />}
+        {mode === 'select' && (
+          <CategorySelectInput onSelect={setSelectedCategory} />
+        )}
         <CategoryNotice selectedCategory={selectedCategory} />
       </div>
     </SectionCard>

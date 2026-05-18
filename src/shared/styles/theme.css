@@ -29,12 +29,14 @@
 
   --color-black: #121212;
   --color-gray: #848483;
+
+  --color-yellow-searched: #ffebc0;
 }
 
 :root {
   --font-pretendard:
-    "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  --font-nanum-square: "NanumSquare", "Pretendard", sans-serif;
+    'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-nanum-square: 'NanumSquare', 'Pretendard', sans-serif;
 
   --ns-title-b-20-font: var(--font-nanum-square);
   --ns-title-b-20-weight: 700;

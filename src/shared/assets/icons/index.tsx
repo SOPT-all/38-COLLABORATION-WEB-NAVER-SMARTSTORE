@@ -5,6 +5,7 @@ import IcArrowDiagonalSvg from './ic_arrow_diagonal.svg?react';
 import IcArrowDownSvg from './ic_arrow_down.svg?react';
 import IcArrowRightSvg from './ic_arrow_right.svg?react';
 import IcArrowUpSvg from './ic_arrow_up.svg?react';
+import IcHeartSvg from './ic_heart.svg?react';
 import IcHelpSvg from './ic_help.svg?react';
 import IcMakeItemSvg from './ic_makeItem.svg?react';
 import IcNaverCircleSvg from './ic_naverCircle.svg?react';
@@ -42,17 +43,20 @@ export const IcArrowDown = ({
   className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowDownSvg className={className} {...props} />;
+export const IcHeart = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcHeartSvg className={className} {...props} />
+);
 export const IcArrowRight = ({
   className = 'text-gray',
   ...props
 }: SvgProps) => <IcArrowRightSvg className={className} {...props} />;
+export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (
+  <IcArrowUpSvg className={className} {...props} />
+);
 export const IcArrowDiagonal = ({
   className = 'text-white',
   ...props
 }: SvgProps) => <IcArrowDiagonalSvg className={className} {...props} />;
-export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (
-  <IcArrowUpSvg className={className} {...props} />
-);
 export const IcProhibit = ({ className = 'text-red', ...props }: SvgProps) => (
   <IcProhibitSvg className={className} {...props} />
 );
@@ -64,6 +68,7 @@ export const IcQuestion = ({
 export const IcSearch = ({ className = 'text-gray', ...props }: SvgProps) => (
   <IcSearchSvg className={className} {...props} />
 );
+
 export const IcSearch2 = ({
   className = 'text-gray-300',
   ...props

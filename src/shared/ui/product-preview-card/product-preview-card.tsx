@@ -37,7 +37,7 @@ const ProductPreviewCard = ({
       </div>
 
       <div className='flex items-center text-black'>
-        <p className='title-b-18'>{price.toLocaleString()}</p>
+        <p className='title-b-18'>{price.toLocaleString('ko-KR')}</p>
         <p className='title-sb-16-1_5'>원</p>
       </div>
 
@@ -48,7 +48,7 @@ const ProductPreviewCard = ({
 
         <span className='m-[0.4rem] h-[0.4rem] w-[0.4rem] rounded-full bg-gray-200' />
 
-        <span className={`body-md-13-2 text-gray`}>리뷰 {reviewCount}</span>
+        <span className='body-md-13-2 text-gray'>리뷰 {reviewCount}</span>
       </div>
     </div>
   );

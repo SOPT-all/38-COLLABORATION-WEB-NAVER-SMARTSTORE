@@ -1,4 +1,4 @@
-import ProductPreviewCard from '@pages/product-register/components/product-preview-card/product-preview-card';
+import ProductPreviewCard from '@shared/ui/product-preview-card/product-preview-card';
 
 const StoreHome = () => {
   return (

@@ -28,7 +28,7 @@ const ProductPreviewCard = ({
       </div>
 
       <div className='flex w-full justify-between'>
-        <p className='body-md-14 mt-[1.2rem] mb-[0.2rem] line-clamp-2 w-[19.5rem] text-black'>
+        <p className='body-md-14 mt-[1.2rem] mb-[0.2rem] line-clamp-2 min-h-[2rem] w-[19.5rem] text-black'>
           {productName}
         </p>
         <button type='button' aria-label='상품 찜하기'>

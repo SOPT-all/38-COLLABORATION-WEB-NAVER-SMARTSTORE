@@ -1,11 +1,13 @@
+import { ProductNoticeBar } from '@shared/ui/product-notice-bar';
 import ProductImageSection from './components/product-image-section/product-image-section';
 
 const ProductRegister = () => {
+
   return (
-    <>
-      {/* 예시 코드 */}
-      <ProductImageSection/>
-    </>
+      <>
+      <ProductNoticeBar variant='register' />
+          <ProductImageSection/>
+      </>
   );
 };
 

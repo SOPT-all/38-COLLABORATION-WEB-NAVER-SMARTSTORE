@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { IcArrowRight, IcTooltip } from '@shared/assets/icons';
 
 import { SectionCard, SectionSubtitle } from '../section-cards';
 import SegmentedToggle from '../toggles/segmented-toggle';
@@ -6,9 +7,7 @@ import SegmentedToggle from '../toggles/segmented-toggle';
 const rowClass =
   'flex w-full items-start gap-[4rem] border-b border-gray-200 pb-[0.8rem]';
 
-const lastRowClass = 'flex w-full items-start gap-[4rem]';
-
-const labelClass = 'flex h-[4rem] w-[12rem] shrink-0 items-center';
+const labelClass = 'flex h-[4rem] w-[12rem] shrink-0 items-center pl-[2rem]';
 
 const PriceSection = () => {
   const [discount, setDiscount] = useState('설정안함');
@@ -17,7 +16,7 @@ const PriceSection = () => {
 
   return (
     <SectionCard title='판매가' paddingX='small' className='w-[103.4rem]'>
-      <section className='flex flex-col gap-[1.2rem]'>
+      <section className='flex w-full flex-col gap-[1.2rem]'>
         <div className={rowClass}>
           <div className={labelClass}>
             <SectionSubtitle title='판매가' hasQuestion />
@@ -36,20 +35,32 @@ const PriceSection = () => {
               </span>
             </div>
 
-            <div className='flex w-[49.1rem] flex-col gap-[0.4rem]'>
-              <p className='body-md-12 text-green'>
+            <div className='body-md-12 text-green flex w-[49.1rem] flex-col gap-[0.4rem]'>
+              <p>
                 스마트스토어를 통한 거래 시 주문관리/판매 수수료 및 그 외
                 수수료가 부과될 수 있습니다.
-                <a href='#' className='whitespace-nowrap'>
-                  수수료 안내 &gt;
+                <a
+                  href='https://join.shopping.naver.com/faq/list.nhn?catgCd=H00015'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='수수료 안내 페이지로 이동'
+                  className='ml-[0.1rem] inline-flex items-center whitespace-nowrap underline'
+                >
+                  수수료 안내 <IcArrowRight className='text-green' />
                 </a>
               </p>
 
-              <p className='body-md-12 text-green'>
+              <p>
                 판매가, 할인가를 활용한 비정상 거래는 자동 탐지되어 판매지수에
                 포함되지 않으니 유의해주세요.
-                <a href='#' className='whitespace-nowrap'>
-                  안내 &gt;
+                <a
+                  href='https://join.shopping.naver.com/faq/list.nhn?catgCd=H00015'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label='안내 페이지로 이동'
+                  className='ml-[0.1rem] inline-flex items-center whitespace-nowrap underline'
+                >
+                  안내 <IcArrowRight className='text-green' />
                 </a>
               </p>
             </div>
@@ -59,6 +70,9 @@ const PriceSection = () => {
         <div className={rowClass}>
           <div className={labelClass}>
             <SectionSubtitle title='즉시할인' required={false} />
+            <div className='ml-[0.4rem] flex h-[1.6rem] w-[1.6rem]'>
+              <IcTooltip />
+            </div>
           </div>
 
           <SegmentedToggle
@@ -82,7 +96,7 @@ const PriceSection = () => {
           />
         </div>
 
-        <div className={lastRowClass}>
+        <div className='flex w-full items-start gap-[4rem]'>
           <div className={labelClass}>
             <SectionSubtitle title='부가세' />
           </div>

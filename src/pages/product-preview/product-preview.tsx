@@ -5,7 +5,7 @@ const ProductPreview = () => {
   return (
     <main>
       <ProductNoticeBar variant='preview' />
-      <section className='pt-[2rem] pl-[2.6rem]'>
+      <section className='px-[2.6rem] pt-[2rem]'>
         <ProductPreviewCard
           productName='[라운지 회원전용] 크리니크 시베리아리치크림 125ml 대용량'
           price={92000}

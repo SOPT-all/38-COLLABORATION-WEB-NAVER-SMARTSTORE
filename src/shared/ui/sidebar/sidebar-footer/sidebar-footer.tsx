@@ -17,17 +17,19 @@ const FOOTER_SECTIONS = [
 
 const SidebarFooter = () => {
   return (
-    <div className='grid gap-[2rem] bg-gray-600 px-[2rem] py-[4.4rem]'>
-      {FOOTER_SECTIONS.map(({ title, links }) => (
-        <div key={title}>
-          <div className='body-md-12 text-gray mb-[0.8rem]'>{title}</div>
-          <div className='flex flex-col gap-[0.4rem]'>
-            {links.map((link) => (
-              <ExternalLink key={link} text={link} />
-            ))}
+    <div className='flex-1 bg-gray-600 px-[2rem] py-[4.4rem]'>
+      <div className='grid gap-[2rem]'>
+        {FOOTER_SECTIONS.map(({ title, links }) => (
+          <div key={title}>
+            <div className='body-md-12 text-gray mb-[0.8rem]'>{title}</div>
+            <div className='flex flex-col gap-[0.4rem]'>
+              {links.map((link) => (
+                <ExternalLink key={link} text={link} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

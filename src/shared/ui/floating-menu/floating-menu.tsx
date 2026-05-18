@@ -16,7 +16,7 @@ const MENU_ITEMS = [
 
 const FloatingMenu = () => {
   return (
-    <div className='fixed right-0 flex h-screen flex-col items-center gap-[1.4rem] border-l border-gray-100 bg-white px-[1.4rem] pt-[1.6rem]'>
+    <div className='sticky top-[6rem] flex h-[calc(100vh-6rem)] flex-col items-center gap-[1.4rem] border-l border-gray-100 bg-white px-[1.4rem] pt-[1.6rem]'>
       {MENU_ITEMS.map(({ icon, label }) => (
         <button
           key={label}

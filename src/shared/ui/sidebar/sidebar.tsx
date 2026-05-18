@@ -4,7 +4,7 @@ import SidebarProfile from './sidebar-profile/sidebar-profile';
 
 const Sidebar = () => {
   return (
-    <div className='w-[21rem]'>
+    <div className='flex w-[21rem] flex-col'>
       <SidebarProfile />
       <SidebarMiddle />
       <SidebarFooter />

@@ -46,7 +46,6 @@ export const IcArrowDown = ({
 export const IcHeart = ({ className = 'text-gray', ...props }: SvgProps) => (
   <IcHeartSvg className={className} {...props} />
 );
-
 export const IcArrowRight = ({
   className = 'text-gray',
   ...props
@@ -89,6 +88,3 @@ export const IcUnion = ({
   className = 'text-[#8796A1]',
   ...props
 }: SvgProps) => <IcUnionSvg className={className} {...props} />;
-export const IcHeart = ({ className = 'text-gray', ...props }: SvgProps) => (
-  <IcHeartSvg className={className} {...props} />
-);

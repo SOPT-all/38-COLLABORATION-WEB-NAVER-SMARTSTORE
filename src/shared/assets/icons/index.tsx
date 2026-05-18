@@ -26,7 +26,6 @@ import IconUpSvg from './icon_up.svg?react';
 type SvgProps = SVGProps<SVGSVGElement>;
 
 // 멀티컬러
-export const IcNaverLogo = (props: SvgProps) => <IcNaverLogoSvg {...props} />;
 export const IcAlarm = (props: SvgProps) => <IcAlarmSvg {...props} />;
 export const IcHelp = (props: SvgProps) => <IcHelpSvg {...props} />;
 export const IcSolution = (props: SvgProps) => <IcSolutionSvg {...props} />;
@@ -90,3 +89,7 @@ export const IcUnion = ({
   className = 'text-[#8796A1]',
   ...props
 }: SvgProps) => <IcUnionSvg className={className} {...props} />;
+export const IcNaverLogo = ({
+  className = 'text-green',
+  ...props
+}: SvgProps) => <IcNaverLogoSvg className={className} {...props} />;

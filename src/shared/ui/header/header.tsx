@@ -8,7 +8,7 @@ const Header = () => {
     <header className='flex w-full items-center justify-between bg-gray-800 px-[2rem] py-[1.6rem]'>
       <div className='flex items-center gap-[1.6rem]'>
         <div className='flex items-center gap-[0.8rem]'>
-          <IcNaverLogo className='h-[1.95rem] w-[1.95rem]' />
+          <IcNaverLogo className='text-green h-[1.95rem] w-[1.95rem]' />
           <span className='ns-title-b-20 text-white'>스마트스토어센터</span>
         </div>
 
@@ -26,17 +26,17 @@ const Header = () => {
         </nav>
       </div>
 
-      <div className='flex items-center gap-[1.6rem]'>
+      <div className='body-md-12 flex items-center gap-[1.6rem] text-white'>
         <div className='flex items-center gap-[0.4rem]'>
-          <span className='body-md-12 text-white'>iter1290님</span>
+          <span>iter1290님</span>
           <button
             type='button'
-            className='body-md-12 flex items-center justify-center rounded-[5rem] border border-white px-[0.8rem] py-[0.2rem] text-white'
+            className='flex items-center justify-center rounded-[5rem] border border-white px-[0.8rem] py-[0.2rem]'
           >
             내정보
           </button>
         </div>
-        <span className='body-md-12 text-white'>로그아웃</span>
+        <span>로그아웃</span>
       </div>
     </header>
   );

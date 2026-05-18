@@ -3,7 +3,7 @@
 // import PriceSection from './components/price-section/price-section';
 // import { ProductCategory } from './components/product-category';
 // import ProductImageSection from './components/product-image-section/product-image-section';
-// import { ProductName } from './components/product-name';
+// import { ProductName } from './components/product-name/product-name';
 // import ProductPreviewCard from './components/product-preview-card/product-preview-card';
 
 // const ProductRegister = () => {
@@ -50,3 +50,8 @@
 // };
 
 // export default ProductRegister;
+
+const ProductRegister = () => {
+  return <></>;
+};
+export default ProductRegister;

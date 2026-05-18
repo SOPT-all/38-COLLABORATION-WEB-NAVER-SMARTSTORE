@@ -4,7 +4,11 @@ import { cn } from '@shared/utils/cn';
 
 import { SectionCard, SectionSubtitle } from '../section-cards';
 
-const ProductImageSection = () => {
+interface ProductImageSectionProps {
+  onImageChange: (url: string | null) => void;
+}
+
+const ProductImageSection = ({ onImageChange }: ProductImageSectionProps) => {
   // 선택한 파일의 임시 URL 저장 (미리보기용)
   const [preview, setPreview] = useState<string | null>(null);
 
@@ -13,7 +17,9 @@ const ProductImageSection = () => {
     // 파일 선택 없이 취소했을 때 방어
     if (!file) return;
     // 선택한 파일을 임시 URL로 변환해서 즉시 미리보기
-    setPreview(URL.createObjectURL(file));
+    const url = URL.createObjectURL(file);
+    setPreview(url);
+    onImageChange(url);
   };
 
   return (

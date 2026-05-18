@@ -22,7 +22,7 @@ const StoreHome = () => {
   return (
     <div className='w-full'>
       <HomeNoticeBar notices={notices} />
-      <div className='flex w-full flex-col pl-[2.6rem] pr-[2.5rem]'>
+      <div className='flex w-full flex-col px-[2.6rem]'>
         <div className='mt-[0.8rem]'>
           <RegisterButton />
         </div>

@@ -1,6 +1,7 @@
 import type { SVGProps } from 'react';
 
 import IcAlarmSvg from './ic_alarm.svg?react';
+import IcNaverLogoSvg from './ic_naver_logo.svg?react';
 import IcArrowDiagonalSvg from './ic_arrow_diagonal.svg?react';
 import IcArrowDownSvg from './ic_arrow_down.svg?react';
 import IcArrowRightSvg from './ic_arrow_right.svg?react';
@@ -88,3 +89,7 @@ export const IcUnion = ({
   className = 'text-[#8796A1]',
   ...props
 }: SvgProps) => <IcUnionSvg className={className} {...props} />;
+export const IcNaverLogo = ({
+  className = 'text-green',
+  ...props
+}: SvgProps) => <IcNaverLogoSvg className={className} {...props} />;

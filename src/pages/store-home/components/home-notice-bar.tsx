@@ -74,7 +74,7 @@ const HomeNoticeBar = ({ notices }: HomeNoticeBarProps) => {
   return (
     <section className='flex w-full items-stretch' aria-label='공지사항'>
       <div
-        className='text-gray flex shrink-0 items-center border border-gray-200 bg-gray-100 px-[0.2rem] py-[1.7rem]'
+        className='text-gray flex shrink-0 items-center border border-gray-200 bg-gray-100 px-[0.05rem] py-[1.7rem]'
         aria-hidden='true'
       >
         <IcArrowRight

@@ -15,7 +15,7 @@ const PriceSection = () => {
   const [tax, setTax] = useState('과세상품');
 
   return (
-    <SectionCard title='판매가' paddingX='small' className='w-[103.4rem]'>
+    <SectionCard title='판매가' paddingX='small' className='w-full'>
       <section className='flex w-full flex-col gap-[1.2rem]'>
         <div className={rowClass}>
           <div className={labelClass}>
@@ -35,10 +35,9 @@ const PriceSection = () => {
               </span>
             </div>
 
-            <div className='body-md-12 text-green flex w-[49.1rem] flex-col gap-[0.4rem]'>
+            <div className='body-md-12 text-green flex flex-col gap-[0.4rem]'>
               <p>
-                스마트스토어를 통한 거래 시 주문관리/판매 수수료 및 그 외
-                수수료가 부과될 수 있습니다.
+                스마트스토어를 통한 거래 시 주문관리/판매 수수료 및 그 외 수수료가 부과될 수 있습니다.
                 <a
                   href='https://join.shopping.naver.com/faq/list.nhn?catgCd=H00015'
                   target='_blank'
@@ -51,8 +50,7 @@ const PriceSection = () => {
               </p>
 
               <p>
-                판매가, 할인가를 활용한 비정상 거래는 자동 탐지되어 판매지수에
-                포함되지 않으니 유의해주세요.
+                판매가, 할인가를 활용한 비정상 거래는 자동 탐지되어 판매지수에 포함되지 않으니 유의해주세요.
                 <a
                   href='https://join.shopping.naver.com/faq/list.nhn?catgCd=H00015'
                   target='_blank'

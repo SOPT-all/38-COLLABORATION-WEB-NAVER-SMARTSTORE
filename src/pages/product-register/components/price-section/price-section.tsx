@@ -9,7 +9,12 @@ const rowClass =
 
 const labelClass = 'flex h-[4rem] w-[12rem] shrink-0 items-center pl-[2rem]';
 
-const PriceSection = () => {
+interface PriceSectionProps {
+  onChange: (price: number) => void;
+}
+
+const PriceSection = ({ onChange }: PriceSectionProps) => {
+  const [priceValue, setPriceValue] = useState('');
   const [discount, setDiscount] = useState('설정안함');
   const [salePeriod, setSalePeriod] = useState('설정안함');
   const [tax, setTax] = useState('과세상품');
@@ -26,8 +31,14 @@ const PriceSection = () => {
             <div className='flex h-[3.4rem] w-[19.9rem] border border-gray-200 bg-gray-50'>
               <input
                 type='text'
+                value={priceValue}
                 placeholder='숫자만 입력'
-                className='body-md-12 placeholder:text-gray flex-1 px-[1rem] text-black'
+                onChange={(e) => {
+                  const num = Number(e.target.value.replace(/[^0-9]/g, ''));
+                  setPriceValue(e.target.value.replace(/[^0-9]/g, ''));
+                  onChange(num);
+                }}
+                className='body-md-12 placeholder:text-gray flex-1 px-[1rem] text-black outline-none'
               />
 
               <span className='body-md-12 text-gray grid w-[3.1rem] place-items-center border-l border-gray-200'>
@@ -37,7 +48,8 @@ const PriceSection = () => {
 
             <div className='body-md-12 text-green flex flex-col gap-[0.4rem]'>
               <p>
-                스마트스토어를 통한 거래 시 주문관리/판매 수수료 및 그 외 수수료가 부과될 수 있습니다.
+                스마트스토어를 통한 거래 시 주문관리/판매 수수료 및 그 외
+                수수료가 부과될 수 있습니다.
                 <a
                   href='https://join.shopping.naver.com/faq/list.nhn?catgCd=H00015'
                   target='_blank'
@@ -50,7 +62,8 @@ const PriceSection = () => {
               </p>
 
               <p>
-                판매가, 할인가를 활용한 비정상 거래는 자동 탐지되어 판매지수에 포함되지 않으니 유의해주세요.
+                판매가, 할인가를 활용한 비정상 거래는 자동 탐지되어 판매지수에
+                포함되지 않으니 유의해주세요.
                 <a
                   href='https://join.shopping.naver.com/faq/list.nhn?catgCd=H00015'
                   target='_blank'

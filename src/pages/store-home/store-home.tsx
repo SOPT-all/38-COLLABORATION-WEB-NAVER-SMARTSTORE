@@ -1,6 +1,6 @@
-import MissionSection from './components/mission-section/mission-section';
-
+import GuideSection from './components/guide-section/guide-section';
 import HomeNoticeBar, { type HomeNotice } from "./components/home-notice-bar";
+import MissionSection from './components/mission-section/mission-section';
 
 const notices: HomeNotice[] = [
   {
@@ -16,9 +16,6 @@ const notices: HomeNotice[] = [
     createdAt: "2026-05-14T14:30:00",
   },
 ];
-
-import GuideSection from './components/guide-section/guide-section';
-import MissionSection from './components/mission-section/mission-section';
 
 const StoreHome = () => {
   return <>

@@ -1,14 +1,15 @@
 import type { SVGProps } from 'react';
 
 import IcAlarmSvg from './ic_alarm.svg?react';
-import IcNaverLogoSvg from './ic_naver_logo.svg?react';
 import IcArrowDiagonalSvg from './ic_arrow_diagonal.svg?react';
 import IcArrowDownSvg from './ic_arrow_down.svg?react';
 import IcArrowRightSvg from './ic_arrow_right.svg?react';
+import IcArrowRightGreenSvg from './ic_arrow_right_green.svg?react';
 import IcArrowUpSvg from './ic_arrow_up.svg?react';
 import IcHeartSvg from './ic_heart.svg?react';
 import IcHelpSvg from './ic_help.svg?react';
 import IcMakeItemSvg from './ic_makeItem.svg?react';
+import IcNaverLogoSvg from './ic_naver_logo.svg?react';
 import IcNaverCircleSvg from './ic_naverCircle.svg?react';
 import IcNaverCircleRedSvg from './ic_naverCircle_red.svg?react';
 import IcProfileSvg from './ic_profile.svg';
@@ -58,6 +59,11 @@ export const IcArrowDiagonal = ({
   className = 'text-white',
   ...props
 }: SvgProps) => <IcArrowDiagonalSvg className={className} {...props} />;
+export const IcArrowRightGreen = ({
+  className = 'text-green',
+  ...props
+}: SvgProps) => <IcArrowRightGreenSvg className={className} {...props} />;
+
 export const IcProhibit = ({ className = 'text-red', ...props }: SvgProps) => (
   <IcProhibitSvg className={className} {...props} />
 );
@@ -65,7 +71,6 @@ export const IcQuestion = ({
   className = 'text-green',
   ...props
 }: SvgProps) => <IcQuestionSvg className={className} {...props} />;
-
 export const IcSearch = ({ className = 'text-gray', ...props }: SvgProps) => (
   <IcSearchSvg className={className} {...props} />
 );

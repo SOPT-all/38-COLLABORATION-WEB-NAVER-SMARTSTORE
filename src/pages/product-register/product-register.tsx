@@ -1,11 +1,5 @@
-import { ProductCategory } from './components/product-category';
-
 const ProductRegister = () => {
-  return (
-    <>
-      <ProductCategory />
-    </>
-  );
+  return <></>;
 };
 
 export default ProductRegister;

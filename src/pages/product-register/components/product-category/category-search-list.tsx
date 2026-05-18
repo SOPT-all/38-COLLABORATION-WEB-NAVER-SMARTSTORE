@@ -28,6 +28,7 @@ const CategorySearchList = ({
         return (
           <div
             key={item.id}
+            role='option'
             onClick={() => onSelect(item)}
             onMouseEnter={() => setHoveredIndex(index)}
             className={cn(

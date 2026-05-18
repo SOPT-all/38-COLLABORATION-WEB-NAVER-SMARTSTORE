@@ -11,11 +11,9 @@ const CategoryNotice = ({ selectedCategory }: CategoryNoticeProps) => {
     <div aria-live='polite' className='flex flex-col items-start gap-[0.8rem]'>
       {selectedCategory ? (
         <>
-          <div className='flex items-center'>
-            <p className='body-md-12 text-blue-500'>
-              선택한 카테고리 : {selectedCategory.name}
-            </p>
-          </div>
+          <p className='body-md-12 text-blue-500'>
+            선택한 카테고리 : {selectedCategory.name}
+          </p>
           <div className='h-[0.1rem] self-stretch bg-gray-200' />
         </>
       ) : (

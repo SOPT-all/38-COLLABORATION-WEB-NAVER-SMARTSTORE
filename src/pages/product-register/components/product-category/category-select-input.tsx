@@ -26,27 +26,25 @@ const CategorySelectInput = ({ onSelect }: CategorySelectInputProps) => {
 
   return (
     <div className='flex flex-col items-start self-stretch'>
-      <div className='flex h-[3.4rem] flex-col items-start justify-center gap-[0.4rem] self-stretch border border-gray-200 bg-white px-[1.2rem] py-[0.4rem]'>
-        <div className='flex items-center justify-between self-stretch'>
-          <span
-            className={cn('body-md-12', selected ? 'text-black' : 'text-gray')}
-          >
-            {selected ? selected.name : '선택'}
-          </span>
-          <button
-            aria-expanded={isOpen}
-            aria-haspopup='listbox'
-            aria-label='카테고리 선택'
-            type='button'
-            onClick={() => setIsOpen((prev) => !prev)}
-          >
-            <IcTriangleUp className={cn(isOpen && 'rotate-180')} />
-          </button>
-        </div>
-      </div>
-      <div aria-live='polite'>
+      <button
+        type='button'
+        aria-expanded={isOpen}
+        aria-haspopup='listbox'
+        aria-label='카테고리 선택'
+        className='flex h-[3.4rem] w-full items-center justify-between border border-gray-200 bg-white px-[1.2rem]'
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
+        <span
+          className={cn('body-md-12', selected ? 'text-black' : 'text-gray')}
+        >
+          {selected ? selected.name : '선택'}
+        </span>
+        <IcTriangleUp className={cn(isOpen && 'rotate-180')} />
+      </button>
+      <div aria-live='polite' className='w-full'>
         {isOpen && (
-          <div className='flex flex-col items-start self-stretch border border-t-0 border-gray-200'>
+          <div className='flex w-full flex-col items-start border border-t-0 border-gray-200'>
+            {' '}
             {DUMMY_CATEGORIES.map((item) => (
               <button
                 key={item.id}

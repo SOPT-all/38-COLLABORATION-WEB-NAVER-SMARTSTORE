@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { IcTriangleUp } from '@shared/assets/icons';
 import { cn } from '@shared/utils/cn';
 
-import CategorySelectList from './category-select-list';
 import type { Category } from './types';
 
 interface CategorySelectInputProps {
@@ -47,10 +46,20 @@ const CategorySelectInput = ({ onSelect }: CategorySelectInputProps) => {
       </div>
       <div aria-live='polite'>
         {isOpen && (
-          <CategorySelectList
-            items={DUMMY_CATEGORIES}
-            onSelect={handleSelect}
-          />
+          <div className='flex flex-col items-start self-stretch border border-t-0 border-gray-200'>
+            {DUMMY_CATEGORIES.map((item) => (
+              <button
+                key={item.id}
+                type='button'
+                onClick={() => handleSelect(item)}
+                className='group flex h-[3.4rem] w-full items-center px-[1.2rem] py-[0.4rem] hover:bg-gray-100'
+              >
+                <span className='body-md-12 group-hover:text-green text-black'>
+                  {item.name}
+                </span>
+              </button>
+            ))}
+          </div>
         )}
       </div>
     </div>

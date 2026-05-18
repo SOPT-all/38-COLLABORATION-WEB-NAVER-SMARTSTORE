@@ -19,16 +19,10 @@ const CategorySearchEmpty = ({ highlight }: CategorySearchEmptyProps) => {
         </div>
       </div>
 
-      <div className='flex flex-col items-start justify-center gap-[0.8rem] p-[1.2rem]'>
-        <p className='body-md-12 text-gray'>
-          • 단어의 철자가 정확한지 확인해 보세요.
-        </p>
-        <p className='body-md-12 text-gray'>
-          • 한글을 영어 혹은 영어를 한글로 입력했는지 확인해 보세요.
-        </p>
-        <p className='body-md-12 text-gray'>
-          • 카테고리명 선택으로 변경해서 정확한 카테고리를 찾아보세요.
-        </p>
+      <div className='body-md-12 text-gray flex flex-col gap-[0.8rem] p-[1.2rem]'>
+        <p>• 단어의 철자가 정확한지 확인해 보세요.</p>
+        <p>• 한글을 영어 혹은 영어를 한글로 입력했는지 확인해 보세요.</p>
+        <p>• 카테고리명 선택으로 변경해서 정확한 카테고리를 찾아보세요.</p>
       </div>
     </div>
   );

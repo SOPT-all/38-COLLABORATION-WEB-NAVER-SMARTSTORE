@@ -12,7 +12,7 @@ export default function MissionContentCard({
 }: MissionContentCardProps) {
   const navigate = useNavigate();
   return (
-    <div className='flex w-[77.7rem] border border-gray-200 bg-white'>
+    <div className='flex flex-1 border border-gray-200 bg-white'>
       {/* 왼쪽 콘텐츠 영역 */}
       <div className='flex flex-1 flex-col justify-between px-[3.2rem] py-[3.6rem]'>
         {/* 숫자 + 원 프레임 */}

@@ -23,7 +23,7 @@ const ProductImageSection = ({ onImageChange }: ProductImageSectionProps) => {
   };
 
   return (
-    <SectionCard title='상품이미지' required hasQuestion>
+    <SectionCard title='상품이미지' required hasQuestion className='w-full'>
       <div className='flex items-start gap-[10rem]'>
         <SectionSubtitle title='대표이미지' required hasQuestion />
 

@@ -30,12 +30,7 @@ const SectionCard = ({
   return (
     <div className={cn('flex flex-col', className)}>
       {/* 제목부 */}
-      <div
-        className={cn(
-          'flex items-center border border-gray-200 bg-white py-[2rem]',
-          SECTION_PADDING_X[paddingX],
-        )}
-      >
+      <div className='flex items-center border border-gray-200 bg-white px-[3.6rem] py-[2rem]'>
         <SectionTitle
           title={title}
           required={required}

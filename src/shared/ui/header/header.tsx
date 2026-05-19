@@ -1,16 +1,17 @@
 import { Fragment } from 'react';
 import { IcNaverLogo } from '@shared/assets/icons';
+import { Link } from 'react-router-dom';
 
 const NAV_LINKS = ['쇼핑파트너센터', '커머스솔루션마켓', '통합광고주센터'];
 
 const Header = () => {
   return (
-    <header className='flex w-full items-center justify-between bg-gray-800 px-[2rem] py-[1.6rem]'>
+    <header className='sticky top-0 z-1000 flex w-full items-center justify-between bg-gray-800 px-[2rem] py-[1.6rem]'>
       <div className='flex items-center gap-[1.6rem]'>
-        <div className='flex items-center gap-[0.8rem]'>
+        <Link to='/' className='flex items-center gap-[0.8rem]'>
           <IcNaverLogo className='text-green h-[1.95rem] w-[1.95rem]' />
           <span className='ns-title-b-20 text-white'>스마트스토어센터</span>
-        </div>
+        </Link>
 
         <nav className='flex items-center'>
           {NAV_LINKS.map((label, index) => (

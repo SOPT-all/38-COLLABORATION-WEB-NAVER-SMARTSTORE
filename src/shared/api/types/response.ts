@@ -4,5 +4,5 @@ export type BaseResponse<T> = {
   message: string;
   data: T;
   code: string;
-  meta: object;
+  meta: Record<string, unknown>;
 };

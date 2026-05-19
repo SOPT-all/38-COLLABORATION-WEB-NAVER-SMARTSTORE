@@ -4,5 +4,5 @@ export const uploadToS3 = async (presignedUrl: string, file: File) => {
     body: file,
     headers: { 'Content-Type': file.type },
   });
-  if (!response.ok) throw new Error(`${response.status}`);
+  if (!response.ok) throw new Error();
 };

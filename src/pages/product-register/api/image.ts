@@ -14,7 +14,7 @@ type PresignedUrlResponse = {
   expiresIn: number;
 };
 
-export const getPresignedUrl = (body: PresignedUrlRequest) =>
+export const fetchPresignedUrl = (body: PresignedUrlRequest) =>
   http.post<PresignedUrlResponse, PresignedUrlRequest>(
     END_POINT.PRESIGNED_URL,
     body,

@@ -3,16 +3,17 @@ import { Button } from '@shared/ui/button';
 import { ProductNoticeBar } from '@shared/ui/product-notice-bar';
 import ProductPreviewCard from '@shared/ui/product-preview-card/product-preview-card';
 
-import PriceSection from './components/price-section/price-section';
-import ProductCategory from './components/product-category/product-category';
-import ProductImageSection from './components/product-image-section/product-image-section';
-import ProductName from './components/product-name/product-name';
+import {
+  PriceSection,
+  ProductCategory,
+  ProductImageSection,
+  ProductName,
+} from './components';
 import { useImageUpload } from './hooks/use-image-upload';
 
 const ProductRegister = () => {
   const [productName, setProductName] = useState('');
   const [previewImages, setPreviewImages] = useState<string[]>([]);
-  const [s3Urls, setS3Urls] = useState<string[]>([]);
   const [price, setPrice] = useState(0);
 
   const { mutateAsync: uploadImage } = useImageUpload();
@@ -22,14 +23,11 @@ const ProductRegister = () => {
     const objectUrl = URL.createObjectURL(file);
     setPreviewImages((prev) => [...prev, objectUrl]);
 
-    try {
-      const s3Url = await uploadImage(file);
-      if (s3Url) setS3Urls((prev) => [...prev, s3Url]);
-    } catch {
+    await uploadImage(file).catch(() => {
       setPreviewImages((prev) => prev.filter((url) => url !== objectUrl));
       URL.revokeObjectURL(objectUrl);
       alert('이미지 업로드에 실패했습니다.');
-    }
+    });
   };
 
   return (

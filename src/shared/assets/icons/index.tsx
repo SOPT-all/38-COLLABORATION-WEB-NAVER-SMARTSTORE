@@ -21,8 +21,8 @@ import IcSolutionSvg from './ic_solution.svg?react';
 import IcTalktalkSvg from './ic_talktalk.svg?react';
 import IcTodoSvg from './ic_todo.svg?react';
 import IcTooltipSvg from './ic_tooltip.svg?react';
-import IcUnionSvg from './ic_union.svg?react';
 import IcTriangleUpSvg from './ic_triangle_up.svg?react';
+import IcUnionSvg from './ic_union.svg?react';
 import IconUpSvg from './icon_up.svg?react';
 
 type SvgProps = SVGProps<SVGSVGElement>;

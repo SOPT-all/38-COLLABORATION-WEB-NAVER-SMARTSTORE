@@ -9,15 +9,9 @@ import {
   NOTICE_TYPE_LABEL,
 } from '../constants/home-notice-bar';
 import { useHomeNoticeRolling } from '../hooks/use-home-notice-rolling';
+import type { HomeNotice } from '../types/notice';
 import { formatNoticeDate } from '../utils/format-notice-date';
 import { getRollingNotices } from '../utils/get-rolling-notices';
-
-export type HomeNotice = {
-  id: number;
-  noticeType: string;
-  title: string;
-  createdAt: string;
-};
 
 type HomeNoticeBarProps = {
   notices: HomeNotice[];

@@ -11,16 +11,17 @@ import { useImageUpload } from './hooks/use-image-upload';
 
 const ProductRegister = () => {
   const [productName, setProductName] = useState('');
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [previewImages, setPreviewImages] = useState<string[]>([]);
+  const [s3Urls, setS3Urls] = useState<string[]>([]);
   const [price, setPrice] = useState(0);
-  const [finalImageUrl, setFinalImageUrl] = useState<string | null>(null);
 
   const { mutateAsync: uploadImage } = useImageUpload();
 
-  const handleImageChange = async (file: File) => {
-    setPreviewUrl(URL.createObjectURL(file));
+  const handleImageSelect = async (file: File) => {
+    if (previewImages.length >= 3) return;
+    setPreviewImages([...previewImages, URL.createObjectURL(file)]);
     const s3Url = await uploadImage(file);
-    setFinalImageUrl(s3Url);
+    if (s3Url) setS3Urls([...s3Urls, s3Url]);
   };
 
   return (
@@ -33,8 +34,8 @@ const ProductRegister = () => {
               productName={productName}
               price={price}
               rating={4.8}
-              reviewCount={12453}
-              imageUrl={previewUrl ?? undefined}
+              reviewCount={20}
+              imageUrl={previewImages[0]}
             />
             <div className='flex flex-col gap-[0.8rem]'>
               <ProductName onChange={setProductName} />
@@ -45,8 +46,9 @@ const ProductRegister = () => {
           <div className='flex flex-col gap-[0.8rem]'>
             <PriceSection onChange={setPrice} />
             <ProductImageSection
-              previewUrl={previewUrl}
-              onImageChange={handleImageChange}
+              previewImages={previewImages}
+              onFileSelect={handleImageSelect}
+              maxImages={3}
             />
           </div>
         </div>

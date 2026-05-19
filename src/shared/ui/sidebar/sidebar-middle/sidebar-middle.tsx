@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import SidebarItem from './sidebar-item';
 import SidebarMenu from './sidebar-menu';
@@ -43,12 +43,15 @@ const STATIC_MENUS: { label: string; badge?: 'npay' | 'n' }[] = [
 
 const Middle = () => {
   const navigate = useNavigate();
-  const [isProductOpen, setIsProductOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<string>();
+  const { pathname } = useLocation();
+  const [isProductOpen, setIsProductOpen] = useState(
+    pathname === '/register' || pathname === '/preview',
+  );
 
-  const handleItemClick = (label: string, to?: string) => {
+  const selectedItem = PRODUCT_ITEMS.find(({ to }) => to === pathname)?.label;
+
+  const handleItemClick = (to?: string) => {
     if (!to) return;
-    setSelectedItem(label);
     navigate(to);
   };
 
@@ -74,7 +77,7 @@ const Middle = () => {
             key={label}
             label={label}
             isSelected={selectedItem === label}
-            onClick={() => handleItemClick(label, to)}
+            onClick={() => handleItemClick(to)}
           />
         ))}
       </SidebarMenu>

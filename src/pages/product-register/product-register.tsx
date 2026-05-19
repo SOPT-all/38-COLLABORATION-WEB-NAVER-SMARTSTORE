@@ -16,41 +16,39 @@ const ProductRegister = () => {
   return (
     <div className='flex flex-col'>
       <ProductNoticeBar variant='register' />
-      <section className='px-[2.6rem] pt-[2rem]'>
-        <div className='flex flex-col items-end gap-[1.2rem]'>
-          {/* 전체 섹션 + 버튼 감싸는 div */}
-          <div className='flex flex-col items-start gap-[0.8rem] self-stretch'>
-            {/* 미리보기 + 상품명&카테고리 */}
-            <div className='grid grid-cols-[auto_1fr] items-start gap-[2.6rem] self-stretch'>
-              <ProductPreviewCard
-                productName={productName}
-                price={price}
-                rating={4.8}
-                reviewCount={12453}
-                imageUrl={imageUrl ?? undefined}
-              />
-              {/* 상품명 & 카테고리 */}
-              <div className='flex flex-col gap-[0.8rem]'>
-                <ProductName onChange={setProductName} />
-                <ProductCategory />
-              </div>
-            </div>
-
-            {/* 판매가 & 상품이미지 */}
-            <div className='flex flex-col items-start gap-[0.8rem] self-stretch'>
-              <PriceSection onChange={setPrice} />
-              <ProductImageSection onImageChange={setImageUrl} />
+      <div className='flex flex-col items-end gap-[1.2rem] px-[2.6rem] pt-[2rem]'>
+        {/* 전체 섹션 + 버튼 감싸는 div */}
+        <div className='flex flex-col gap-[0.8rem] self-stretch'>
+          {/* 미리보기 + 상품명&카테고리 */}
+          <div className='grid grid-cols-[auto_1fr] gap-[2.6rem]'>
+            <ProductPreviewCard
+              productName={productName}
+              price={price}
+              rating={4.8}
+              reviewCount={12453}
+              imageUrl={imageUrl ?? undefined}
+            />
+            {/* 상품명 & 카테고리 */}
+            <div className='flex flex-col gap-[0.8rem]'>
+              <ProductName onChange={setProductName} />
+              <ProductCategory />
             </div>
           </div>
 
-          {/* 버튼 그룹 */}
-          <div className='flex items-center gap-[0.4rem]'>
-            <Button color='gray'>임시저장</Button>
-            <Button color='green'>저장하기</Button>
-            <Button color='white'>취소</Button>
+          {/* 판매가 & 상품이미지 */}
+          <div className='flex flex-col gap-[0.8rem]'>
+            <PriceSection onChange={setPrice} />
+            <ProductImageSection onImageChange={setImageUrl} />
           </div>
         </div>
-      </section>
+
+        {/* 버튼 그룹 */}
+        <div className='flex items-center gap-[0.4rem]'>
+          <Button color='gray'>임시저장</Button>
+          <Button color='green'>저장하기</Button>
+          <Button color='white'>취소</Button>
+        </div>
+      </div>
     </div>
   );
 };

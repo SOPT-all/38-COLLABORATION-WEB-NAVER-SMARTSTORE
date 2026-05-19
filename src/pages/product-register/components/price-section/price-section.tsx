@@ -34,9 +34,9 @@ const PriceSection = ({ onChange }: PriceSectionProps) => {
                 value={priceValue}
                 placeholder='숫자만 입력'
                 onChange={(e) => {
-                  const num = Number(e.target.value.replace(/[^0-9]/g, ''));
-                  setPriceValue(e.target.value.replace(/[^0-9]/g, ''));
-                  onChange(num);
+                  const numericValue = e.target.value.replace(/[^0-9]/g, '');
+                  setPriceValue(numericValue);
+                  onChange(Number(numericValue));
                 }}
                 className='body-md-12 placeholder:text-gray flex-1 px-[1rem] text-black outline-none'
               />

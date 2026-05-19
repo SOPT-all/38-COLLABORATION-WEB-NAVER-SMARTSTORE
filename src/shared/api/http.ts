@@ -27,4 +27,5 @@ export const http = {
     );
     return response.data.data;
   },
+  
 };

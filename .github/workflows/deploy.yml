@@ -5,39 +5,27 @@ on:
     branches:
       - main
 
-env:
-  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
 jobs:
-  deploy:
+  sync:
+    name: Sync forked repo
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
+      - name: Checkout main
         uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
         with:
-          version: latest
+          token: ${{ secrets.FORKED_REPO_TOKEN }}
+          fetch-depth: 0
+          ref: main
 
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: "pnpm"
+      - name: Add remote-url
+        run: |
+          git remote add forked-repo https://twossu:${{ secrets.FORKED_REPO_TOKEN }}@github.com/twossu/38-COLLABORATION-WEB-NAVER-SMARTSTORE.git
 
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Push changes to forked-repo
+        run: |
+          git push -f forked-repo main
 
-      - name: Install Vercel CLI
-        run: pnpm add -g vercel@latest
-
-      - name: Pull Vercel Environment Information
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-
-      - name: Deploy Project Artifacts to Vercel
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Clean up
+        run: |
+          git remote remove forked-repo

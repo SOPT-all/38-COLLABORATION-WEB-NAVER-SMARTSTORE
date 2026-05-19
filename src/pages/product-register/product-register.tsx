@@ -19,9 +19,17 @@ const ProductRegister = () => {
 
   const handleImageSelect = async (file: File) => {
     if (previewImages.length >= 3) return;
-    setPreviewImages([...previewImages, URL.createObjectURL(file)]);
-    const s3Url = await uploadImage(file);
-    if (s3Url) setS3Urls([...s3Urls, s3Url]);
+    const objectUrl = URL.createObjectURL(file);
+    setPreviewImages((prev) => [...prev, objectUrl]);
+
+    try {
+      const s3Url = await uploadImage(file);
+      if (s3Url) setS3Urls((prev) => [...prev, s3Url]);
+    } catch {
+      setPreviewImages((prev) => prev.filter((url) => url !== objectUrl));
+      URL.revokeObjectURL(objectUrl);
+      alert('이미지 업로드에 실패했습니다.');
+    }
   };
 
   return (

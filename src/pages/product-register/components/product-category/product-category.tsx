@@ -7,11 +7,20 @@ import CategorySearchInput from './category-search-input';
 import CategorySelectInput from './category-select-input';
 import type { Category } from './types';
 
-const ProductCategory = () => {
+interface ProductCategoryProps {
+  onChange?: (categoryId: number | null) => void;
+}
+
+const ProductCategory = ({ onChange }: ProductCategoryProps) => {
   const [mode, setMode] = useState<'search' | 'select'>('search');
   const [selectedCategory, setSelectedCategory] = useState<Category | null>(
     null,
   );
+
+  const handleCategorySelect = (category: Category | null) => {
+    setSelectedCategory(category);
+    onChange?.(category ? category.id : null);
+  };
 
   return (
     <SectionCard title='카테고리' hasQuestion>
@@ -20,18 +29,18 @@ const ProductCategory = () => {
           mode={mode}
           onSearchClick={() => {
             setMode('search');
-            setSelectedCategory(null);
+            handleCategorySelect(null);
           }}
           onSelectClick={() => {
             setMode('select');
-            setSelectedCategory(null);
+            handleCategorySelect(null);
           }}
         />
         {mode === 'search' && (
-          <CategorySearchInput onSelect={setSelectedCategory} />
+          <CategorySearchInput onSelect={handleCategorySelect} />
         )}
         {mode === 'select' && (
-          <CategorySelectInput onSelect={setSelectedCategory} />
+          <CategorySelectInput onSelect={handleCategorySelect} />
         )}
         <CategoryNotice selectedCategory={selectedCategory} />
       </div>

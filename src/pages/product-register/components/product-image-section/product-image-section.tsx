@@ -1,25 +1,22 @@
-import { useState } from 'react';
 import { IcUnion } from '@shared/assets/icons';
-import { cn } from '@shared/utils/cn';
 
 import { SectionCard, SectionSubtitle } from '../section-cards';
 
 interface ProductImageSectionProps {
-  onImageChange: (url: string | null) => void;
+  previewImages: string[];
+  onFileSelect: (file: File) => void;
+  maxImages: number;
 }
 
-const ProductImageSection = ({ onImageChange }: ProductImageSectionProps) => {
-  // 선택한 파일의 임시 URL 저장 (미리보기용)
-  const [preview, setPreview] = useState<string | null>(null);
-
+const ProductImageSection = ({
+  previewImages,
+  onFileSelect,
+  maxImages,
+}: ProductImageSectionProps) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    // 파일 선택 없이 취소했을 때 방어
     if (!file) return;
-    // 선택한 파일을 임시 URL로 변환해서 즉시 미리보기
-    const url = URL.createObjectURL(file);
-    setPreview(url);
-    onImageChange(url);
+    onFileSelect(file);
   };
 
   return (
@@ -28,28 +25,28 @@ const ProductImageSection = ({ onImageChange }: ProductImageSectionProps) => {
         <SectionSubtitle title='대표이미지' required hasQuestion />
 
         <div className='flex flex-col gap-[0.8rem]'>
-          <label
-            className={cn(
-              'flex h-[12.8rem] w-[12.8rem] cursor-pointer items-center justify-center overflow-hidden bg-white',
-              !preview && 'border border-dashed border-gray-300',
+          <div className='flex gap-[0.8rem]'>
+            {previewImages.map((image, index) => (
+              <div
+                key={index}
+                className='h-[12.8rem] w-[12.8rem] overflow-hidden bg-white'
+              >
+                <img src={image} className='h-full w-full object-cover' />
+              </div>
+            ))}
+
+            {previewImages.length < maxImages && (
+              <label className='flex h-[12.8rem] w-[12.8rem] cursor-pointer items-center justify-center border border-dashed border-gray-300 bg-white'>
+                <IcUnion className='h-[3.45rem] w-[3.45rem]' />
+                <input
+                  type='file'
+                  accept='image/*'
+                  onChange={handleChange}
+                  className='hidden'
+                />
+              </label>
             )}
-          >
-            {preview ? (
-              <img
-                src={preview}
-                alt='대표이미지'
-                className='h-full w-full object-cover'
-              />
-            ) : (
-              <IcUnion className='h-[3.45rem] w-[3.45rem]' />
-            )}
-            <input
-              type='file'
-              accept='image/*'
-              onChange={handleChange}
-              className='hidden'
-            />
-          </label>
+          </div>
 
           <div className='flex flex-col gap-[0.7rem]'>
             <div className='text-green body-md-12 grid gap-[0.7rem]'>

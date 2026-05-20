@@ -1,17 +1,33 @@
 import { ProductNoticeBar } from '@shared/ui/product-notice-bar';
 import ProductPreviewCard from '@shared/ui/product-preview-card/product-preview-card';
 
+import { useProducts } from './hooks/use-products';
+
 const ProductPreview = () => {
+  const { data: products } = useProducts();
+
   return (
     <main>
       <ProductNoticeBar variant='preview' />
       <section className='px-[2.6rem] pt-[2rem]'>
-        <ProductPreviewCard
-          productName='[라운지 회원전용] 크리니크 시베리아리치크림 125ml 대용량'
-          price={92000}
-          rating={4.8}
-          reviewCount={20}
-        />
+        {products && products.length > 0 ? (
+          <div className='grid grid-cols-4 gap-[2rem]'>
+            {products.map(({ id, name, price, representativeImage }) => (
+              <ProductPreviewCard
+                key={id}
+                productName={name}
+                price={price}
+                rating={0}
+                reviewCount={0}
+                imageUrl={representativeImage?.imageUrl}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className='body-md-14 text-gray mt-[4rem] text-center'>
+            등록된 상품이 없어요.
+          </p>
+        )}
       </section>
     </main>
   );

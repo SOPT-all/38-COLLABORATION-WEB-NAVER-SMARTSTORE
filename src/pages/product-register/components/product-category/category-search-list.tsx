@@ -44,8 +44,9 @@ const CategorySearchList = ({
             >
               {textIndex !== -1 ? (
                 <>
+                  {item.name.slice(0, textIndex)}
                   <span className='bg-yellow-searched'>
-                    {item.name.slice(0, textIndex + highlight.length)}
+                    {item.name.slice(textIndex, textIndex + highlight.length)}
                   </span>
                   {item.name.slice(textIndex + highlight.length)}
                 </>

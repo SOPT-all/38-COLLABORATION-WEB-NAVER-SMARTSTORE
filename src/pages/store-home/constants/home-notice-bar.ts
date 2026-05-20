@@ -1,8 +1,11 @@
 export const NOTICE_TYPE_LABEL: Record<string, string> = {
+  GENERAL: '일반',
   SYSTEM: '시스템',
-  EVENT: '이벤트',
-  STORE: '스토어',
-  SERVICE: '서비스',
+  SAFE_TRADE: '안전거래',
+  SELLING_TIP: '판매팁',
+  D_COMMERCE: 'D-커머스',
+  HAZARD_INFO: '위해정보',
+  MANUAL: '매뉴얼',
 };
 
 export const HOME_NOTICE_BAR_ROLLING_INTERVAL_MS = 3000;

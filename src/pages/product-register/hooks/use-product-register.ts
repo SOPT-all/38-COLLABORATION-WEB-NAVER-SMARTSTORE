@@ -19,7 +19,7 @@ export const useProductRegister = () => {
     setUploadedImages((prev) => [...prev, image]);
   };
 
-  const { mutate: saveProduct, isPending } = useMutation({
+  const { mutate: saveProduct } = useMutation({
     mutationFn: registerProduct,
     onSuccess: () => {
       navigate(`/preview`);
@@ -52,7 +52,6 @@ export const useProductRegister = () => {
   return {
     productName,
     price,
-    isPending,
     setProductName,
     setPrice,
     setCategoryId,

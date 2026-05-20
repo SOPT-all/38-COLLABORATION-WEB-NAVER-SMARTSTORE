@@ -24,9 +24,9 @@ const ProductPreview = () => {
             ))}
           </div>
         ) : (
-          <p className='body-md-14 text-gray mt-[4rem] text-center'>
-            등록된 상품이 없어요.
-          </p>
+          <div className='pt-[28rem] text-center'>
+            <p className='body-md-14 text-gray'>등록된 상품이 없어요.</p>
+          </div>
         )}
       </section>
     </main>

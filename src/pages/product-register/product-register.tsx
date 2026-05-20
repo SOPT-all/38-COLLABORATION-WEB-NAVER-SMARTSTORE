@@ -10,24 +10,37 @@ import {
   ProductName,
 } from './components';
 import { useImageUpload } from './hooks/use-image-upload';
+import { useProductRegister } from './hooks/use-product-register';
 
 const ProductRegister = () => {
-  const [productName, setProductName] = useState('');
   const [previewImages, setPreviewImages] = useState<string[]>([]);
-  const [price, setPrice] = useState(0);
 
   const { mutateAsync: uploadImage } = useImageUpload();
+
+  const {
+    productName,
+    price,
+    setProductName,
+    setPrice,
+    setCategoryId,
+    addUploadedImage,
+    handleSave,
+  } = useProductRegister();
 
   const handleImageSelect = async (file: File) => {
     if (previewImages.length >= 3) return;
     const objectUrl = URL.createObjectURL(file);
     setPreviewImages((prev) => [...prev, objectUrl]);
 
-    await uploadImage(file).catch(() => {
+    const s3Url = await uploadImage(file).catch(() => {
       setPreviewImages((prev) => prev.filter((url) => url !== objectUrl));
       URL.revokeObjectURL(objectUrl);
       alert('이미지 업로드에 실패했습니다.');
     });
+
+    if (s3Url) {
+      addUploadedImage({ imageUrl: s3Url, contentType: file.type });
+    }
   };
 
   return (
@@ -45,7 +58,7 @@ const ProductRegister = () => {
             />
             <div className='flex flex-col gap-[0.8rem]'>
               <ProductName onChange={setProductName} />
-              <ProductCategory />
+              <ProductCategory onChange={setCategoryId}/>
             </div>
           </div>
 
@@ -61,7 +74,9 @@ const ProductRegister = () => {
 
         <div className='flex items-center gap-[0.4rem]'>
           <Button color='gray'>임시저장</Button>
-          <Button color='green'>저장하기</Button>
+          <Button color='green' onClick={handleSave}>
+            저장하기
+          </Button>
           <Button color='white'>취소</Button>
         </div>
       </div>

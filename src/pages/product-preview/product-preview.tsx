@@ -4,7 +4,9 @@ import ProductPreviewCard from '@shared/ui/product-preview-card/product-preview-
 import { useProducts } from './hooks/use-products';
 
 const ProductPreview = () => {
-  const { data: products } = useProducts();
+  const { data: products, isPending } = useProducts();
+
+  if (isPending) return null;
 
   return (
     <main>

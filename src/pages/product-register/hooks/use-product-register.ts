@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { type ProductImage,registerProduct } from '@pages/product-register/api/product';
 import { useMutation } from '@tanstack/react-query';
+import { useNavigate } from 'react-router-dom';
 
 type UploadedImage = {
   imageUrl: string;
@@ -8,6 +9,7 @@ type UploadedImage = {
 };
 
 export const useProductRegister = () => {
+  const navigate = useNavigate();
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState(0);
   const [categoryId, setCategoryId] = useState<number | null>(null);
@@ -20,7 +22,7 @@ export const useProductRegister = () => {
   const { mutate: saveProduct, isPending } = useMutation({
     mutationFn: registerProduct,
     onSuccess: () => {
-      alert('상품이 등록되었습니다.');
+      navigate(`/preview`);
     },
     onError: (error) => {
       alert('상품 등록에 실패했습니다.');
@@ -29,14 +31,14 @@ export const useProductRegister = () => {
   });
 
   const handleSave = () => {
-    if (!productName || !price) { 
+    if (!productName || !categoryId || !price) { 
       alert('상품명, 카테고리, 판매가를 입력해주세요.');
       return;
     }
 
     saveProduct({
       name: productName,
-      categoryId: 1,
+      categoryId,
       price,
       images: uploadedImages.map((img, index): ProductImage => ({
         imageUrl: img.imageUrl,

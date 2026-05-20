@@ -22,7 +22,7 @@ const ProductRegister = () => {
     price,
     setProductName,
     setPrice,
-    // setCategoryId,
+    setCategoryId,
     addUploadedImage,
     handleSave,
   } = useProductRegister();
@@ -58,7 +58,7 @@ const ProductRegister = () => {
             />
             <div className='flex flex-col gap-[0.8rem]'>
               <ProductName onChange={setProductName} />
-              <ProductCategory />
+              <ProductCategory onChange={setCategoryId}/>
             </div>
           </div>
 

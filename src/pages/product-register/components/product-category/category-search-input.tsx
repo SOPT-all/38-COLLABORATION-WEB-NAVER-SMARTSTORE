@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCategorySearch } from '@pages/product-register/hooks/use-category-search';
 import { IcSearch2 } from '@shared/assets/icons';
 
@@ -12,15 +12,19 @@ interface CategorySearchInputProps {
 
 const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
   const [value, setValue] = useState('');
+  const [debouncedValue, setDebouncedValue] = useState('');
   const [selected, setSelected] = useState<Category | null>(null);
-  const {
-    mutate: searchCategory,
-    data: categories = [],
-    reset,
-  } = useCategorySearch();
+  const { data: categories } = useCategorySearch(debouncedValue);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(value);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [value]);
 
   const handleSearch = () => {
-    if (value) searchCategory(value);
+    if (value) setDebouncedValue(value);
   };
 
   const handleSelect = (item: Category) => {
@@ -39,7 +43,6 @@ const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
             onChange={(e) => {
               setValue(e.target.value);
               setSelected(null);
-              reset();
               if (e.target.value === '') onSelect(null);
             }}
             onKeyDown={(e) => {
@@ -56,16 +59,17 @@ const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
         </div>
       </div>
       <div aria-live='polite'>
-        {value &&
+        {debouncedValue &&
+          debouncedValue === value &&
           !selected &&
-          (categories.length > 0 ? (
+          (categories && categories.length > 0 ? (
             <CategorySearchList
               items={categories}
-              highlight={value}
+              highlight={debouncedValue}
               onSelect={handleSelect}
             />
           ) : (
-            <CategorySearchEmpty highlight={value} />
+            <CategorySearchEmpty highlight={debouncedValue} />
           ))}
       </div>
     </div>

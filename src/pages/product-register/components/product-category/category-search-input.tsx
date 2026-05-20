@@ -19,7 +19,7 @@ const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedValue(value);
-    }, 3000);
+    }, 300);
     return () => clearTimeout(timer);
   }, [value]);
 
@@ -60,7 +60,6 @@ const CategorySearchInput = ({ onSelect }: CategorySearchInputProps) => {
       </div>
       <div aria-live='polite'>
         {debouncedValue &&
-          debouncedValue === value &&
           !selected &&
           (categories && categories.length > 0 ? (
             <CategorySearchList

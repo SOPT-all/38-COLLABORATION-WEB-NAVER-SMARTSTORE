@@ -51,7 +51,7 @@ const ProductRegister = () => {
           <div className='grid grid-cols-[auto_1fr] gap-[2.6rem]'>
             <ProductPreviewCard
               productName={productName}
-              price={price}
+              price={price ?? 0}
               rating={4.8}
               reviewCount={20}
               imageUrl={previewImages[0]}

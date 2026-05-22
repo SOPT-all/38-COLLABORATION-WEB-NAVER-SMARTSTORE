@@ -20,7 +20,7 @@ const getErrorMessage = (error: unknown): string => {
 export const useProductRegister = () => {
   const navigate = useNavigate();
   const [productName, setProductName] = useState('');
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState<number | null>(null);
   const [categoryId, setCategoryId] = useState<number | null>(null);
 
   const [uploadedImages, setUploadedImages] = useState<UploadedImage[]>([]);
@@ -60,7 +60,7 @@ export const useProductRegister = () => {
     saveProduct({
       name: productName,
       categoryId: categoryId!,
-      price,
+      price: price!,
       images: uploadedImages.map((img, index): ProductImage => ({
         imageUrl: img.imageUrl,
         contentType: img.contentType,

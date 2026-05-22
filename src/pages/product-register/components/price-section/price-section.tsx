@@ -34,9 +34,11 @@ const PriceSection = ({ onChange }: PriceSectionProps) => {
                 value={priceValue}
                 placeholder='숫자만 입력'
                 onChange={(e) => {
+                  const MAX_PRICE = 1_000_000_000_000; // 1조
                   const numericValue = e.target.value.replace(/[^0-9]/g, '');
+                  if (Number(numericValue) >= MAX_PRICE) return;
                   setPriceValue(numericValue);
-                  onChange(Number(numericValue));
+                  onChange(numericValue === '' ? 0 : Number(numericValue));
                 }}
                 className='body-md-12 placeholder:text-gray flex-1 px-[1rem] text-black outline-none'
               />

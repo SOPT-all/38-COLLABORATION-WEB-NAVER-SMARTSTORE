@@ -27,7 +27,6 @@ const MISSION_CONTENTS = [
     description:
       '내 상품들이 구매자들에게 매력적으로 보일 수 있게 내 스토어를 꾸며 보세요.',
     buttonText: '스토어 꾸미기',
-    navigateTo: '/store',
     image: MissionImage2,
   },
   {
@@ -36,7 +35,6 @@ const MISSION_CONTENTS = [
     description:
       '톡톡을 통해 고객문의를 쉽게 응대받을 수 있는 편의를 제공하고, 더 많은 고객 응대를 통한 매출 상승도 함께 노려보세요.',
     buttonText: '문의 응대하기',
-    navigateTo: '/inquiry',
     image: MissionImage3,
   },
   {
@@ -46,7 +44,6 @@ const MISSION_CONTENTS = [
     description:
       '구매자들이 혜택을 느낄 수 있을 만한 쿠폰, 포인트 적립 같은 혜택을 설정해서 더 잘 팔리게 홍보해 보세요.',
     buttonText: '마케팅 설정하기',
-    navigateTo: '/marketing',
     image: MissionImage4,
   },
 ];
@@ -74,7 +71,7 @@ const MissionSection = () => {
           title={title}
           description={description}
           buttonText={buttonText}
-          onButtonClick={() => navigate(navigateTo)}
+          onButtonClick={navigateTo ? () => navigate(navigateTo) : undefined}
           image={image}
         />
       </div>

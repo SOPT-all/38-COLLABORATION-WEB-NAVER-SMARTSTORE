@@ -3,16 +3,16 @@ import { IcHeart } from '@shared/assets/icons';
 interface ProductPreviewCardProps {
   productName: string;
   price: number;
-  rating: number;
-  reviewCount: number;
+  rating?: number;
+  reviewCount?: number;
   imageUrl?: string;
 }
 
 const ProductPreviewCard = ({
   productName,
   price,
-  rating,
-  reviewCount,
+  rating = 0,
+  reviewCount = 0,
   imageUrl,
 }: ProductPreviewCardProps) => {
   return (
@@ -27,11 +27,15 @@ const ProductPreviewCard = ({
         )}
       </div>
 
-      <div className='flex w-full justify-between'>
+      <div className='flex w-full items-start justify-between'>
         <p className='body-md-14 mt-[1.2rem] mb-[0.2rem] line-clamp-2 min-h-[2rem] w-[19.5rem] text-black'>
           {productName}
         </p>
-        <button type='button' aria-label='상품 찜하기'>
+        <button
+          type='button'
+          aria-label='상품 찜하기'
+          className='mt-[1.2rem] p-[0.5rem]'
+        >
           <IcHeart />
         </button>
       </div>
@@ -44,7 +48,7 @@ const ProductPreviewCard = ({
       <div className='mt-[0.8rem] flex items-center'>
         <span className='text-red text-[1.4rem]'>★</span>
 
-        <span className='body-md-13-2 text-black'>{rating}</span>
+        <span className='body-md-13-2 text-black'>{rating.toFixed(1)}</span>
 
         <span className='m-[0.4rem] h-[0.4rem] w-[0.4rem] rounded-full bg-gray-200' />
 

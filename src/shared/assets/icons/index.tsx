@@ -50,7 +50,7 @@ export const IcHeart = ({ className = 'text-gray', ...props }: SvgProps) => (
   <IcHeartSvg className={className} {...props} />
 );
 export const IcArrowRight = ({
-  className = 'text-gray',
+  className = 'text-blue-600',
   ...props
 }: SvgProps) => <IcArrowRightSvg className={className} {...props} />;
 export const IcArrowUp = ({ className = 'text-gray', ...props }: SvgProps) => (

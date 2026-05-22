@@ -4,15 +4,19 @@ interface MissionButtonProps {
   step: number;
   label: string;
   isSelected?: boolean;
+  onClick?: () => void;
 }
 
 const MissionButton = ({
   step,
   label = '',
   isSelected = false,
+  onClick,
 }: MissionButtonProps) => {
   return (
-    <div
+    <button
+      type='button'
+      onClick={onClick}
       className={cn(
         'flex w-[21.1rem] cursor-pointer items-center gap-[1.6rem] rounded-[15px] px-[1.6rem] py-[0.8rem] transition-colors',
         isSelected ? 'bg-blue-100' : 'bg-transparent hover:bg-gray-100',
@@ -42,7 +46,7 @@ const MissionButton = ({
       >
         {label}
       </span>
-    </div>
+    </button>
   );
 };
 

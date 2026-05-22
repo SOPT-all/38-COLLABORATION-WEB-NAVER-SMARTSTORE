@@ -7,9 +7,12 @@ const STEPS = [
   { step: 4, label: '마케팅 설정하기' },
 ];
 
-const MissionButtonGroup = () => {
-  const SELECTED_STEP = 1;
+interface MissionButtonGroupProps {
+  selectedStep: number;
+  onStepChange: (step: number) => void;
+}
 
+const MissionButtonGroup = ({ selectedStep, onStepChange }: MissionButtonGroupProps) => {
   return (
     <div className='flex flex-col gap-[0.7rem] border border-gray-200 bg-gray-50 px-[2.4rem] py-[3.6rem]'>
       {STEPS.map(({ step, label }, index) => (
@@ -17,7 +20,8 @@ const MissionButtonGroup = () => {
           <MissionButton
             step={step}
             label={label}
-            isSelected={SELECTED_STEP === step}
+            isSelected={selectedStep === step}
+            onClick={() => onStepChange(step)}
           />
           {index > 0 && (
             <div className='absolute top-[-1.5rem] bottom-[4rem] left-[3.1rem] w-[0.2rem] bg-gray-200' />

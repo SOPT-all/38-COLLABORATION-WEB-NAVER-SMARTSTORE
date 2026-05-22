@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import { type ProductImage,registerProduct } from '@pages/product-register/api/product';
-import { useMutation } from '@tanstack/react-query';
+import {
+  type ProductImage,
+  registerProduct,
+} from '@pages/product-register/api/product';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { isAxiosError } from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,6 +22,7 @@ const getErrorMessage = (error: unknown): string => {
 
 export const useProductRegister = () => {
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState<number | null>(null);
   const [categoryId, setCategoryId] = useState<number | null>(null);
@@ -42,6 +46,7 @@ export const useProductRegister = () => {
   const { mutate: saveProduct } = useMutation({
     mutationFn: registerProduct,
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['products'] });
       navigate(`/preview`);
     },
     onError: (error) => {
@@ -61,12 +66,14 @@ export const useProductRegister = () => {
       name: productName,
       categoryId: categoryId!,
       price: price!,
-      images: uploadedImages.map((img, index): ProductImage => ({
-        imageUrl: img.imageUrl,
-        contentType: img.contentType,
-        imageOrder: index + 1,
-        isRepresentative: index === 0,
-    })),
+      images: uploadedImages.map(
+        (img, index): ProductImage => ({
+          imageUrl: img.imageUrl,
+          contentType: img.contentType,
+          imageOrder: index + 1,
+          isRepresentative: index === 0,
+        }),
+      ),
     });
   };
 
